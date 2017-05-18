@@ -20,6 +20,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func doneToPickerViewController(segue: UIStoryboardSegue) {
+    }
+    @IBAction func doneToPickerViewController2(segue: UIStoryboardSegue) {
+    }
 
 }
 

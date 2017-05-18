@@ -12,6 +12,11 @@
 		A15EE0221ECC35A3009692D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15EE0201ECC35A3009692D2 /* Main.storyboard */; };
 		A15EE0241ECC35A3009692D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A15EE0231ECC35A3009692D2 /* Assets.xcassets */; };
 		A15EE0271ECC35A3009692D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15EE0251ECC35A3009692D2 /* LaunchScreen.storyboard */; };
+		A1D9D76A1ECD5BF700514BDB /* CultureFestivalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D9D7691ECD5BF700514BDB /* CultureFestivalTableViewController.swift */; };
+		A1D9D76C1ECD5C0500514BDB /* PerformEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D9D76B1ECD5C0500514BDB /* PerformEventTableViewController.swift */; };
+		A1D9D76E1ECD600F00514BDB /* DetailPerformEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D9D76D1ECD600F00514BDB /* DetailPerformEventTableViewController.swift */; };
+		A1D9D7701ECD601E00514BDB /* DetailCultureFestivalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D9D76F1ECD601E00514BDB /* DetailCultureFestivalTableViewController.swift */; };
+		A1D9D7721ECD617700514BDB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D9D7711ECD617700514BDB /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		A15EE0231ECC35A3009692D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A15EE0261ECC35A3009692D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A15EE0281ECC35A3009692D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1D9D7691ECD5BF700514BDB /* CultureFestivalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CultureFestivalTableViewController.swift; sourceTree = "<group>"; };
+		A1D9D76B1ECD5C0500514BDB /* PerformEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformEventTableViewController.swift; sourceTree = "<group>"; };
+		A1D9D76D1ECD600F00514BDB /* DetailPerformEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPerformEventTableViewController.swift; sourceTree = "<group>"; };
+		A1D9D76F1ECD601E00514BDB /* DetailCultureFestivalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCultureFestivalTableViewController.swift; sourceTree = "<group>"; };
+		A1D9D7711ECD617700514BDB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,11 @@
 				A15EE0231ECC35A3009692D2 /* Assets.xcassets */,
 				A15EE0251ECC35A3009692D2 /* LaunchScreen.storyboard */,
 				A15EE0281ECC35A3009692D2 /* Info.plist */,
+				A1D9D7691ECD5BF700514BDB /* CultureFestivalTableViewController.swift */,
+				A1D9D76B1ECD5C0500514BDB /* PerformEventTableViewController.swift */,
+				A1D9D76D1ECD600F00514BDB /* DetailPerformEventTableViewController.swift */,
+				A1D9D76F1ECD601E00514BDB /* DetailCultureFestivalTableViewController.swift */,
+				A1D9D7711ECD617700514BDB /* MapViewController.swift */,
 			);
 			path = "공연행사 정보";
 			sourceTree = "<group>";
@@ -137,8 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D9D76C1ECD5C0500514BDB /* PerformEventTableViewController.swift in Sources */,
+				A1D9D7701ECD601E00514BDB /* DetailCultureFestivalTableViewController.swift in Sources */,
 				A15EE01F1ECC35A3009692D2 /* ViewController.swift in Sources */,
+				A1D9D76A1ECD5BF700514BDB /* CultureFestivalTableViewController.swift in Sources */,
+				A1D9D76E1ECD600F00514BDB /* DetailPerformEventTableViewController.swift in Sources */,
 				A15EE01D1ECC35A3009692D2 /* AppDelegate.swift in Sources */,
+				A1D9D7721ECD617700514BDB /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +324,7 @@
 				A15EE02D1ECC35A3009692D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
