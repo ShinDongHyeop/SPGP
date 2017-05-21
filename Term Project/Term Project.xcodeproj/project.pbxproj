@@ -13,7 +13,7 @@
 		A15EE0421ED17A11009692D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A15EE0411ED17A11009692D2 /* Assets.xcassets */; };
 		A15EE0451ED17A11009692D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15EE0431ED17A11009692D2 /* LaunchScreen.storyboard */; };
 		A15EE04D1ED17A71009692D2 /* FestivalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EE04C1ED17A71009692D2 /* FestivalTableViewController.swift */; };
-		A15EE04F1ED17B93009692D2 /* DetailFastivalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EE04E1ED17B93009692D2 /* DetailFastivalTableViewController.swift */; };
+		A15EE04F1ED17B93009692D2 /* DetailFestivalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EE04E1ED17B93009692D2 /* DetailFestivalTableViewController.swift */; };
 		A15EE0511ED1828E009692D2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EE0501ED1828E009692D2 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +26,7 @@
 		A15EE0441ED17A11009692D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A15EE0461ED17A11009692D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A15EE04C1ED17A71009692D2 /* FestivalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestivalTableViewController.swift; sourceTree = "<group>"; };
-		A15EE04E1ED17B93009692D2 /* DetailFastivalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailFastivalTableViewController.swift; sourceTree = "<group>"; };
+		A15EE04E1ED17B93009692D2 /* DetailFestivalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailFestivalTableViewController.swift; sourceTree = "<group>"; };
 		A15EE0501ED1828E009692D2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,7 +67,7 @@
 				A15EE0431ED17A11009692D2 /* LaunchScreen.storyboard */,
 				A15EE0461ED17A11009692D2 /* Info.plist */,
 				A15EE04C1ED17A71009692D2 /* FestivalTableViewController.swift */,
-				A15EE04E1ED17B93009692D2 /* DetailFastivalTableViewController.swift */,
+				A15EE04E1ED17B93009692D2 /* DetailFestivalTableViewController.swift */,
 				A15EE0501ED1828E009692D2 /* MapViewController.swift */,
 			);
 			path = "Term Project";
@@ -148,7 +148,7 @@
 			files = (
 				A15EE03D1ED17A11009692D2 /* ViewController.swift in Sources */,
 				A15EE03B1ED17A11009692D2 /* AppDelegate.swift in Sources */,
-				A15EE04F1ED17B93009692D2 /* DetailFastivalTableViewController.swift in Sources */,
+				A15EE04F1ED17B93009692D2 /* DetailFestivalTableViewController.swift in Sources */,
 				A15EE0511ED1828E009692D2 /* MapViewController.swift in Sources */,
 				A15EE04D1ED17A71009692D2 /* FestivalTableViewController.swift in Sources */,
 			);

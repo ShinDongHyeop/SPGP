@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailFastivalTableViewController: UITableViewController, XMLParserDelegate {
+class DetailFestivalTableViewController: UITableViewController, XMLParserDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
