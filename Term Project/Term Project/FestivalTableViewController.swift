@@ -41,7 +41,7 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
     
     func beginParsing() {
         posts = []
-       parser = XMLParser(contentsOf:(URL(string:"http://openapi.gg.go.kr/CultureFestival?Key=8c1c7bdeab4842f981dd047006ad6886&Type=xml"))!)!
+        parser = XMLParser(contentsOf:(URL(string:"http://openapi.gg.go.kr/CultureFestival?Key=8c1c7bdeab4842f981dd047006ad6886&Type=xml"))!)!
         parser.delegate = self
         parser.parse()
         tbData!.reloadData()
@@ -115,12 +115,18 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
         if segue.identifier == "segueToFestivalDetail" {
             if let cell = sender as? UITableViewCell {
                 let indexPath = tableView.indexPath(for: cell)
-                festivalname = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "yadmNm") as! NSString as String
+                festivalname = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "FASTVL_CONT") as! NSString as String
                 // url에서 한글을 쓸 수 있도록 코딩
                 festivalname_utf8 = festivalname.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+                if let detailFestivalTableViewController = segue.destination as? DetailFestivalTableViewController {
+                    detailFestivalTableViewController.url = url
+                    print(detailFestivalTableViewController.url)
                 }
+                
             }
+        }
     }
+    
 
     // row의 개수는 posts 배열 원소의 개수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

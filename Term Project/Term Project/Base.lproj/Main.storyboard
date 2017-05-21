@@ -167,16 +167,16 @@
             </objects>
             <point key="canvasLocation" x="3441" y="-604"/>
         </scene>
-        <!--Detail Fastival Table View Controller-->
+        <!--Detail Festival Table View Controller-->
         <scene sceneID="pSf-65-82k">
             <objects>
-                <tableViewController id="8fz-Ag-Usw" customClass="DetailFastivalTableViewController" customModule="Term_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="8fz-Ag-Usw" customClass="DetailFestivalTableViewController" customModule="Term_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vlC-1B-JCZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="jek-BV-Yda" detailTextLabel="EwT-YV-t3C" style="IBUITableViewCellStyleSubtitle" id="f6c-sv-5ds">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FestivalCell" textLabel="jek-BV-Yda" detailTextLabel="EwT-YV-t3C" style="IBUITableViewCellStyleSubtitle" id="f6c-sv-5ds">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f6c-sv-5ds" id="mlW-YU-1gp">
@@ -209,6 +209,9 @@
                             <outlet property="delegate" destination="8fz-Ag-Usw" id="PfJ-Vx-HtX"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="detailTableView" destination="vlC-1B-JCZ" id="GhI-fD-UUS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yoO-Q2-epW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
