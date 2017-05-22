@@ -285,7 +285,7 @@
         <!--공연/행사 정보-->
         <scene sceneID="1GY-oC-mF5">
             <objects>
-                <tableViewController title="공연/행사 정보" id="cQY-Nb-hK0" sceneMemberID="viewController">
+                <tableViewController title="공연/행사 정보" id="cQY-Nb-hK0" customClass="EventTableViewController" customModule="Term_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="c3V-yU-6Mu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -335,10 +335,10 @@
             </objects>
             <point key="canvasLocation" x="3441" y="78"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Detail Event Table View Controller-->
         <scene sceneID="5Eq-tY-aFq">
             <objects>
-                <tableViewController id="FXT-iI-iL1" sceneMemberID="viewController">
+                <tableViewController id="FXT-iI-iL1" customClass="DetailEventTableViewController" customModule="Term_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="tke-eb-IsI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
