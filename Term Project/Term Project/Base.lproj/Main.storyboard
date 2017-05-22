@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gAP-Dt-csV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gAP-Dt-csV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -70,7 +70,7 @@
         <!--메인화면-->
         <scene sceneID="pXm-dM-6ZA">
             <objects>
-                <viewController title="메인화면" id="TL2-vv-xpU" sceneMemberID="viewController">
+                <viewController title="메인화면" id="TL2-vv-xpU" customClass="ViewController" customModule="Term_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F8H-JS-T3Y"/>
                         <viewControllerLayoutGuide type="bottom" id="szo-gc-VW9"/>
@@ -156,7 +156,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="xXz-Lc-UiW">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="uy9-eb-Gol"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="uy9-eb-Gol">
+                            <connections>
+                                <segue destination="wUa-yX-8y4" kind="unwind" unwindAction="doneToPickerViewControllerWithSegue:" id="Ie0-Lx-faH"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="za8-Vh-zNw"/>
                     </navigationItem>
                     <connections>
@@ -164,6 +168,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pN6-IO-YM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wUa-yX-8y4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3441" y="-604"/>
         </scene>
@@ -317,28 +322,33 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ubR-sk-yhu">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="cEp-xZ-IUh"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="cEp-xZ-IUh">
+                            <connections>
+                                <segue destination="U6w-47-50V" kind="unwind" unwindAction="doneToPickerViewController2WithSegue:" id="dk1-gz-FM4"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="nuq-4Q-8j4"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3B-DZ-CIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="U6w-47-50V" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3406" y="97"/>
+            <point key="canvasLocation" x="3441" y="78"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="5Eq-tY-aFq">
             <objects>
                 <tableViewController id="FXT-iI-iL1" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="tke-eb-IsI">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="tke-eb-IsI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="V1j-TT-q8M">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="V1j-TT-q8M">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V1j-TT-q8M" id="nF5-gu-bGk">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9E-yK-Iq3">
@@ -363,7 +373,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExK-ro-46y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4361" y="103"/>
+            <point key="canvasLocation" x="4328.8000000000002" y="77.811094452773617"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ReR-bT-lCO">
@@ -385,6 +395,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6iP-Hy-6ta"/>
+        <segue reference="nZv-BU-6Wr"/>
     </inferredMetricsTieBreakers>
 </document>
