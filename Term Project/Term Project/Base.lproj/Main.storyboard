@@ -244,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Szg-fD-qM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5445.6000000000004" y="-275.71214392803603"/>
+            <point key="canvasLocation" x="5471" y="-600"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="H4v-uk-kmY">
@@ -291,7 +291,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="7Be-2Q-Rb7" detailTextLabel="qTF-ge-PMg" style="IBUITableViewCellStyleSubtitle" id="7Sw-pS-GxF">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="7Be-2Q-Rb7" detailTextLabel="qTF-ge-PMg" style="IBUITableViewCellStyleSubtitle" id="7Sw-pS-GxF">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Sw-pS-GxF" id="DgG-Lg-Zl1">
@@ -329,6 +329,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="nuq-4Q-8j4"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tbData" destination="c3V-yU-6Mu" id="Zx1-Jf-iQw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3B-DZ-CIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="U6w-47-50V" userLabel="Exit" sceneMemberID="exit"/>
