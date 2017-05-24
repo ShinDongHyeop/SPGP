@@ -1,17 +1,15 @@
 //
-//  DetailEventTableViewController.swift
+//  FestivalMarkTableViewController.swift
 //  Term Project
 //
-//  Created by kpugame on 2017. 5. 22..
+//  Created by kpugame on 2017. 5. 24..
 //  Copyright © 2017년 DONGHYEOP SHIN. All rights reserved.
 //
 
 import UIKit
 
-class DetailEventTableViewController: UITableViewController {
+class FestivalMarkTableViewController: UITableViewController {
 
-    @IBAction func doneToPickerViewController6(segue: UIStoryboardSegue) {
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

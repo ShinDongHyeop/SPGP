@@ -10,7 +10,8 @@ import UIKit
 
 class EventTableViewController: UITableViewController ,XMLParserDelegate{
 
-   
+    @IBAction func doneToPickerViewController4(segue: UIStoryboardSegue) {
+    }
     var url: String?
     @IBOutlet var tbData: UITableView!
     var parser = XMLParser()

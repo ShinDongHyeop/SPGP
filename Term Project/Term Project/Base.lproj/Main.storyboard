@@ -65,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EyV-YB-jyp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="422.33883058470769"/>
+            <point key="canvasLocation" x="1932" y="535"/>
         </scene>
         <!--메인화면-->
         <scene sceneID="pXm-dM-6ZA">
@@ -146,7 +146,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="8fz-Ag-Usw" kind="show" identifier="segueToFestivalDetail" id="3SZ-C0-tJh"/>
+                                    <segue destination="RIH-ge-jgG" kind="show" identifier="segueToFestivalDetail" id="3SZ-C0-tJh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -204,9 +204,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="SIl-cQ-qyG" kind="show" identifier="segueToMapView" id="6iP-Hy-6ta"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -214,18 +211,40 @@
                             <outlet property="delegate" destination="8fz-Ag-Usw" id="PfJ-Vx-HtX"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="h3x-z3-oVH">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="S2f-Ms-EkA">
+                            <connections>
+                                <segue destination="inO-sQ-kIA" kind="unwind" unwindAction="doneToPickerViewController3WithSegue:" id="aE5-qt-hIq"/>
+                            </connections>
+                        </barButtonItem>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BHc-zo-byN">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="즐겨찾기"/>
+                            <connections>
+                                <segue destination="5Ze-LW-pY5" kind="show" id="09y-sg-O4O"/>
+                            </connections>
+                        </button>
+                        <barButtonItem key="rightBarButtonItem" title="지도" id="I0P-hW-W3W">
+                            <connections>
+                                <segue destination="SIl-cQ-qyG" kind="show" id="Hec-Uj-0P1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="detailTableView" destination="vlC-1B-JCZ" id="GhI-fD-UUS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yoO-Q2-epW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="inO-sQ-kIA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4329" y="-600"/>
+            <point key="canvasLocation" x="5268" y="-600.44977511244383"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="O8K-8v-SFf">
             <objects>
-                <viewController id="SIl-cQ-qyG" sceneMemberID="viewController">
+                <viewController id="SIl-cQ-qyG" customClass="MapViewController" customModule="Term_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lg6-gG-KHB"/>
                         <viewControllerLayoutGuide type="bottom" id="YLT-NH-Chm"/>
@@ -244,7 +263,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Szg-fD-qM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5471" y="-600"/>
+            <point key="canvasLocation" x="6334" y="-314"/>
+        </scene>
+        <!--Festival Mark Table View Controller-->
+        <scene sceneID="TPT-q3-LTt">
+            <objects>
+                <tableViewController id="Kde-jq-zyD" customClass="FestivalMarkTableViewController" customModule="Term_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="FsO-d3-jCS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wSC-N3-M7h">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wSC-N3-M7h" id="Wwl-XE-3YQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Kde-jq-zyD" id="jY1-l3-FMX"/>
+                            <outlet property="delegate" destination="Kde-jq-zyD" id="Rfp-fE-afo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="OlL-j1-RUt">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="nR5-vG-wm4">
+                            <connections>
+                                <segue destination="4Mq-SV-3ba" kind="unwind" unwindAction="doneToPickerViewController5WithSegue:" id="7eJ-T0-Imb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vPr-Lm-LdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="4Mq-SV-3ba" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="7340" y="-1114"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="H4v-uk-kmY">
@@ -314,6 +369,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="kau-6k-lkM" kind="show" id="9Zq-bp-CQf"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -353,18 +411,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V1j-TT-q8M" id="nF5-gu-bGk">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9E-yK-Iq3">
-                                            <rect key="frame" x="321" y="0.0" width="46" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="지도"/>
-                                            <connections>
-                                                <segue destination="SIl-cQ-qyG" kind="show" id="nZv-BU-6Wr">
-                                                    <nil key="action"/>
-                                                </segue>
-                                            </connections>
-                                        </button>
-                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -373,10 +419,68 @@
                             <outlet property="delegate" destination="FXT-iI-iL1" id="hgr-hb-jsz"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Yda-Dm-pQk">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="dT4-9M-hTT">
+                            <connections>
+                                <segue destination="Hwz-xN-oz7" kind="unwind" unwindAction="doneToPickerViewController4WithSegue:" id="LJi-GL-TUO"/>
+                            </connections>
+                        </barButtonItem>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TaA-eg-HR3">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="즐겨찾기"/>
+                            <connections>
+                                <segue destination="py2-9s-xyk" kind="show" id="cF8-hB-zEF"/>
+                            </connections>
+                        </button>
+                        <barButtonItem key="rightBarButtonItem" title="지도" id="rq3-oz-XeT">
+                            <connections>
+                                <segue destination="SIl-cQ-qyG" kind="show" id="tKK-Dd-PJd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExK-ro-46y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Hwz-xN-oz7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4328.8000000000002" y="77.811094452773617"/>
+            <point key="canvasLocation" x="5268" y="77.811094452773617"/>
+        </scene>
+        <!--Event Mark Table View Controller-->
+        <scene sceneID="rYY-0g-05r">
+            <objects>
+                <tableViewController id="O7U-Hh-6wm" customClass="EventMarkTableViewController" customModule="Term_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bjd-Jn-e7J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8gT-Yw-TJh">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8gT-Yw-TJh" id="7xo-F3-Eo0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="O7U-Hh-6wm" id="kfa-sP-l7T"/>
+                            <outlet property="delegate" destination="O7U-Hh-6wm" id="mdc-ie-MHT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="biN-0P-8YI">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="DNa-vU-OTG">
+                            <connections>
+                                <segue destination="UaO-7x-Nfc" kind="unwind" unwindAction="doneToPickerViewController6WithSegue:" id="4FM-Nl-nab"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0mf-42-3ks" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="UaO-7x-Nfc" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="7340" y="455"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ReR-bT-lCO">
@@ -396,8 +500,80 @@
             </objects>
             <point key="canvasLocation" x="2625" y="79"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XN6-xL-lGl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="py2-9s-xyk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l2T-au-N63">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="O7U-Hh-6wm" kind="relationship" relationship="rootViewController" id="9MR-b7-IyR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Ww-We-ujs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6335" y="455"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uTu-7T-CB9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kau-6k-lkM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Akl-c2-u1d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FXT-iI-iL1" kind="relationship" relationship="rootViewController" id="eBh-7o-Atg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y8N-AT-CnC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4328.8000000000002" y="77.811094452773617"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kJL-FM-fKw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RIH-ge-jgG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YsQ-la-jui">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8fz-Ag-Usw" kind="relationship" relationship="rootViewController" id="xWp-h4-96i"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="76P-6c-7mB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4328.8000000000002" y="-600.44977511244383"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tox-Fi-MfG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Ze-LW-pY5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Ob-sF-4Hs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Kde-jq-zyD" kind="relationship" relationship="rootViewController" id="7dA-De-18y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bny-gu-zeu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6334" y="-1114"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nZv-BU-6Wr"/>
+        <segue reference="Hec-Uj-0P1"/>
     </inferredMetricsTieBreakers>
 </document>
