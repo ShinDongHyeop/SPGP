@@ -38,7 +38,8 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
     
     var festivalname_utf8 = ""
     
-    
+    var FASTVL_BEGIN_DE = NSMutableString()
+    var FASTVL_CONT = NSMutableString()
     var FASTVL_END_DE = NSMutableString()
     var OPENMEET_PLC = NSMutableString()
     
@@ -90,7 +91,10 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
             
             festival_cont = NSMutableString()
             festival_cont = ""
-            
+            FASTVL_BEGIN_DE = NSMutableString()
+            FASTVL_BEGIN_DE = ""
+            FASTVL_CONT = NSMutableString()
+            FASTVL_CONT = ""
             // 위도 경도
             XPos = NSMutableString()
             XPos = ""
@@ -130,9 +134,17 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
     {
         if element.isEqual(to: "FASTVL_BEGIN_DE") {
             festival_begin.append(string)
+            if festival_begin.hasPrefix("2017") {
+                FASTVL_BEGIN_DE.append(string)
+                print("FASTVL_BEGN : " , FASTVL_BEGIN_DE)
+            }
+            else {
+            }
         }
         else if element.isEqual(to: "FASTVL_CONT") {
+            if festival_begin.hasPrefix("2017") {
             festival_cont.append(string)
+            }
         }
         else if element.isEqual(to: "REFINE_WGS84_LOGT") {
             XPos.append(string)
@@ -170,8 +182,8 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
     {
         if (elementName as NSString).isEqual(to: "row") {
-            if !festival_begin.isEqual(nil) {
-                elements.setObject(festival_begin, forKey: "FASTVL_BEGIN_DE" as NSCopying)
+            if !FASTVL_BEGIN_DE.isEqual(nil) {
+                elements.setObject(FASTVL_BEGIN_DE, forKey: "FASTVL_BEGIN_DE" as NSCopying)
             }
             if !festival_cont.isEqual(nil) {
                 elements.setObject(festival_cont, forKey: "FASTVL_CONT" as NSCopying)
@@ -206,7 +218,6 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
             if !SUPRT_INST_NM.isEqual(nil) {
                 elements.setObject(SUPRT_INST_NM, forKey: "SUPRT_INST_NM" as NSCopying)
             }
-            
             posts.add(elements)
         }
     }
