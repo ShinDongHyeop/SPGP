@@ -37,7 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zol-2W-gu5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-460" y="107.49625187406298"/>
+            <point key="canvasLocation" x="-119" y="78"/>
         </scene>
         <!--즐겨찾기-->
         <scene sceneID="RYk-UQ-KOb">
@@ -161,7 +161,7 @@
                                 <segue destination="wUa-yX-8y4" kind="unwind" unwindAction="doneToPickerViewControllerWithSegue:" id="Ie0-Lx-faH"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="za8-Vh-zNw">
+                        <barButtonItem key="rightBarButtonItem" title="지도보기" style="plain" id="za8-Vh-zNw">
                             <connections>
                                 <segue destination="SIl-cQ-qyG" kind="show" identifier="segueToMapView" id="qJe-hl-JPm"/>
                             </connections>
@@ -222,15 +222,16 @@
                                 <segue destination="inO-sQ-kIA" kind="unwind" unwindAction="doneToPickerViewController3WithSegue:" id="aE5-qt-hIq"/>
                             </connections>
                         </barButtonItem>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BHc-zo-byN">
-                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="즐겨찾기"/>
-                            <connections>
-                                <segue destination="5Ze-LW-pY5" kind="show" id="09y-sg-O4O"/>
-                            </connections>
-                        </button>
-                        <barButtonItem key="rightBarButtonItem" title="지도" id="I0P-hW-W3W"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="jKN-h0-KgP">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BHc-zo-byN">
+                                <rect key="frame" x="209" y="7" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="즐겨찾기"/>
+                                <connections>
+                                    <segue destination="5Ze-LW-pY5" kind="show" id="09y-sg-O4O"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="detailTableView" destination="vlC-1B-JCZ" id="GhI-fD-UUS"/>
@@ -239,7 +240,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yoO-Q2-epW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="inO-sQ-kIA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5268" y="-600.44977511244383"/>
+            <point key="canvasLocation" x="5401" y="-1114"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="O8K-8v-SFf">
@@ -266,7 +267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Szg-fD-qM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6334" y="-314"/>
+            <point key="canvasLocation" x="4329" y="-233"/>
         </scene>
         <!--Festival Mark Table View Controller-->
         <scene sceneID="TPT-q3-LTt">
@@ -277,12 +278,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wSC-N3-M7h">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="e1K-yO-1bQ" detailTextLabel="s1h-y7-sB9" style="IBUITableViewCellStyleSubtitle" id="wSC-N3-M7h">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wSC-N3-M7h" id="Wwl-XE-3YQ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e1K-yO-1bQ">
+                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="s1h-y7-sB9">
+                                            <rect key="frame" x="15" y="25.5" width="33" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -388,7 +405,7 @@
                                 <segue destination="U6w-47-50V" kind="unwind" unwindAction="doneToPickerViewController2WithSegue:" id="dk1-gz-FM4"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="nuq-4Q-8j4">
+                        <barButtonItem key="rightBarButtonItem" title="지도보기" style="plain" id="nuq-4Q-8j4">
                             <connections>
                                 <segue destination="SIl-cQ-qyG" kind="show" id="Wfk-3p-v9n"/>
                             </connections>
@@ -466,7 +483,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExK-ro-46y" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Hwz-xN-oz7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5268" y="77.811094452773617"/>
+            <point key="canvasLocation" x="5401" y="535"/>
         </scene>
         <!--Event Mark Table View Controller-->
         <scene sceneID="rYY-0g-05r">
@@ -477,12 +494,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8gT-Yw-TJh">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ANW-Px-ElZ" detailTextLabel="dBX-Hj-DjI" style="IBUITableViewCellStyleSubtitle" id="8gT-Yw-TJh">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8gT-Yw-TJh" id="7xo-F3-Eo0">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ANW-Px-ElZ">
+                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dBX-Hj-DjI">
+                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -502,7 +535,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mf-42-3ks" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="UaO-7x-Nfc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="7340" y="455"/>
+            <point key="canvasLocation" x="7340" y="535"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ReR-bT-lCO">
@@ -538,12 +571,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ww-We-ujs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6335" y="455"/>
+            <point key="canvasLocation" x="6334" y="535"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uTu-7T-CB9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y8N-AT-CnC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kau-6k-lkM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Akl-c2-u1d">
@@ -555,13 +587,13 @@
                         <segue destination="FXT-iI-iL1" kind="relationship" relationship="rootViewController" id="eBh-7o-Atg"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y8N-AT-CnC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4328.8000000000002" y="77.811094452773617"/>
+            <point key="canvasLocation" x="4329" y="535"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kJL-FM-fKw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="76P-6c-7mB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RIH-ge-jgG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YsQ-la-jui">
@@ -573,8 +605,9 @@
                         <segue destination="8fz-Ag-Usw" kind="relationship" relationship="rootViewController" id="xWp-h4-96i"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="76P-6c-7mB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4328.8000000000002" y="-600.44977511244383"/>
+            <point key="canvasLocation" x="4329" y="-1114"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tox-Fi-MfG">
