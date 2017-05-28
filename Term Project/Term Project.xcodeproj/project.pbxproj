@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A118C80E1EDAD4280073FDB9 /* Festival.swift in Sources */ = {isa = PBXBuildFile; fileRef = A118C80D1EDAD4280073FDB9 /* Festival.swift */; };
+		A118C8101EDAD7780073FDB9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A118C80F1EDAD7780073FDB9 /* Event.swift */; };
+		A118C8121EDAE4690073FDB9 /* Map2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A118C8111EDAE4690073FDB9 /* Map2ViewController.swift */; };
 		A1306EE41ED574E500E4A985 /* EventMarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1306EE31ED574E500E4A985 /* EventMarkTableViewController.swift */; };
 		A1306EE61ED574F900E4A985 /* FestivalMarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1306EE51ED574F900E4A985 /* FestivalMarkTableViewController.swift */; };
 		A15EE03B1ED17A11009692D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EE03A1ED17A11009692D2 /* AppDelegate.swift */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		A118C80D1EDAD4280073FDB9 /* Festival.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Festival.swift; sourceTree = "<group>"; };
+		A118C80F1EDAD7780073FDB9 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		A118C8111EDAE4690073FDB9 /* Map2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map2ViewController.swift; sourceTree = "<group>"; };
 		A1306EE31ED574E500E4A985 /* EventMarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMarkTableViewController.swift; sourceTree = "<group>"; };
 		A1306EE51ED574F900E4A985 /* FestivalMarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestivalMarkTableViewController.swift; sourceTree = "<group>"; };
 		A15EE0371ED17A11009692D2 /* Term Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Term Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,13 +81,15 @@
 				A15EE0431ED17A11009692D2 /* LaunchScreen.storyboard */,
 				A15EE0461ED17A11009692D2 /* Info.plist */,
 				A15EE04C1ED17A71009692D2 /* FestivalTableViewController.swift */,
-				A15EE0501ED1828E009692D2 /* MapViewController.swift */,
 				A15EE0541ED18E20009692D2 /* DetailFestivalTableViewController.swift */,
+				A15EE0501ED1828E009692D2 /* MapViewController.swift */,
+				A118C8111EDAE4690073FDB9 /* Map2ViewController.swift */,
+				A118C80D1EDAD4280073FDB9 /* Festival.swift */,
+				A1306EE51ED574F900E4A985 /* FestivalMarkTableViewController.swift */,
 				A1631AD71ED28B53007CE314 /* EventTableViewController.swift */,
 				A1631AD91ED28B73007CE314 /* DetailEventTableViewController.swift */,
+				A118C80F1EDAD7780073FDB9 /* Event.swift */,
 				A1306EE31ED574E500E4A985 /* EventMarkTableViewController.swift */,
-				A1306EE51ED574F900E4A985 /* FestivalMarkTableViewController.swift */,
-				A118C80D1EDAD4280073FDB9 /* Festival.swift */,
 			);
 			path = "Term Project";
 			sourceTree = "<group>";
@@ -162,10 +168,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1631ADA1ED28B73007CE314 /* DetailEventTableViewController.swift in Sources */,
+				A118C8101EDAD7780073FDB9 /* Event.swift in Sources */,
 				A15EE0571ED19A80009692D2 /* ViewController.swift in Sources */,
 				A1306EE61ED574F900E4A985 /* FestivalMarkTableViewController.swift in Sources */,
 				A118C80E1EDAD4280073FDB9 /* Festival.swift in Sources */,
 				A15EE03B1ED17A11009692D2 /* AppDelegate.swift in Sources */,
+				A118C8121EDAE4690073FDB9 /* Map2ViewController.swift in Sources */,
 				A15EE0511ED1828E009692D2 /* MapViewController.swift in Sources */,
 				A15EE0551ED18E20009692D2 /* DetailFestivalTableViewController.swift in Sources */,
 				A1306EE41ED574E500E4A985 /* EventMarkTableViewController.swift in Sources */,

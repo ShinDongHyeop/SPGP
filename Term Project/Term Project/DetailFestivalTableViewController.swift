@@ -13,9 +13,7 @@ class DetailFestivalTableViewController: UITableViewController, XMLParserDelegat
     @IBAction func doneToPickerViewController5(segue: UIStoryboardSegue) {
     }
     @IBOutlet var detailTableView: UITableView!
-    
-    var url : String?
-    
+
     var parser = XMLParser()
     let postsname : [String] = ["축제내용", "축제시작일", "축제종료일", "개최장소", "도로명주소", "전화번호", "홈페이지", "주관기관", "주최기관", "후원기관"]
     var posts : [String] = ["","","","","","","","","",""]
@@ -32,7 +30,6 @@ class DetailFestivalTableViewController: UITableViewController, XMLParserDelegat
     var MNGT_INST_NM = String()
     var PROMOTER_INST_NM = String()
     var SUPRT_INST_NM = String()
-    
     
     func beginParsing() {
         posts[0] = FASTVL_CONT

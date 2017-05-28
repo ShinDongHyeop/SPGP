@@ -176,7 +176,6 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
             if !festival_cont.isEqual(nil) {
                 elements.setObject(festival_cont, forKey: "FASTVL_CONT" as NSCopying)
             }
-            
             if !XPos.isEqual(nil) {
                 elements.setObject(XPos, forKey: "REFINE_WGS84_LOGT" as NSCopying)
             }
@@ -250,8 +249,6 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
                         detailFestivalTableViewController.MNGT_INST_NM = mngt
                         detailFestivalTableViewController.PROMOTER_INST_NM = promoter
                         detailFestivalTableViewController.SUPRT_INST_NM = suprt
-
-                        
 
                     }
                 }

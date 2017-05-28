@@ -135,6 +135,12 @@ class EventTableViewController: UITableViewController ,XMLParserDelegate{
         element = elementName as NSString
         if (elementName as NSString).isEqual(to: "row")
         {
+            // 위도 경도
+            XPos = NSMutableString()
+            XPos = ""
+            YPos = NSMutableString()
+            YPos = ""
+            
             elements = NSMutableDictionary()
             elements = [:]
             event_begin = NSMutableString()
@@ -221,8 +227,8 @@ class EventTableViewController: UITableViewController ,XMLParserDelegate{
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if segue.identifier == "segueToMapView" {
-            if let mapViewController = segue.destination as? MapViewController {
-                mapViewController.posts = posts
+            if let mapView2Controller = segue.destination as? MapView2Controller {
+                mapView2Controller.posts2 = posts
             }
         }
         
@@ -258,11 +264,10 @@ class EventTableViewController: UITableViewController ,XMLParserDelegate{
                         detailEventTableViewController.MNGT_INST_NM = mngt_inst_nm
                         detailEventTableViewController.PROMOTER_INST_NM = promoter_inst_nm
                         detailEventTableViewController.SUPRT_INST_NM = suprt_inst_nm
-
                     }
                 }
-
-            }}
+            }
+        }
     }
 
     

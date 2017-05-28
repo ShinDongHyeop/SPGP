@@ -1,18 +1,18 @@
 //
-//  MapViewController.swift
+//  Map2ViewController.swift
 //  Term Project
 //
-//  Created by KPUGAME on 2017. 5. 21..
+//  Created by KPUGAME on 2017. 5. 28..
 //  Copyright © 2017년 DONGHYEOP SHIN. All rights reserved.
 //
 
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate {
-
+class MapView2Controller: UIViewController, MKMapViewDelegate {
+    
     @IBOutlet weak var mapView: MKMapView!
-    var posts = NSMutableArray()
+    var posts2 = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         centerMapOnLocation(location: initialLocation)
         mapView.delegate = self
         loadInitialData()
-        mapView.addAnnotations(festivals)
+        mapView.addAnnotations(events)
         // Do any additional setup after loading the view.
     }
     
@@ -33,32 +33,32 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
-    
-    var festivals = [Festival]()
+
+    var events = [Event]()
     
     func loadInitialData() {
-        for post in posts {
-            let FASTVL_CONT = (post as AnyObject).value(forKey: "FASTVL_CONT") as! NSString as String
-            let HMPG_ADDR = (post as AnyObject).value(forKey: "FASTVL_BEGIN_DE") as! NSString as String
+        for post in posts2 {
+            let EVENT_TITLE = (post as AnyObject).value(forKey: "EVENT_TITLE") as! NSString as String
+            let EVENT_BEGIN_DE = (post as AnyObject).value(forKey: "EVENT_BEGIN_DE") as! NSString as String
             let XPos = (post as AnyObject).value(forKey: "REFINE_WGS84_LOGT") as! NSString as String
             let YPos = (post as AnyObject).value(forKey: "REFINE_WGS84_LAT") as! NSString as String
             let lat = (YPos as NSString).doubleValue
             let lon = (XPos as NSString).doubleValue
-            let festival = Festival(title: FASTVL_CONT, locationName: HMPG_ADDR, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon))
+            let event = Event(title: EVENT_TITLE, locationName: EVENT_BEGIN_DE, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon))
             
-            festivals.append(festival)
+            events.append(event)
         }
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, celloutAccessoryControlTapped control: UIControl)
     {
-        let location = view.annotation as! Festival
+        let location = view.annotation as! Event
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
         location.mapItem().openInMaps(launchOptions: launchOptions)
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if let annotation = annotation as? Festival {
+        if let annotation = annotation as? Event {
             let identifier = "pin"
             var view: MKPinAnnotationView
             
@@ -76,7 +76,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIView
             }
-            view.pinTintColor = MKPinAnnotationView.greenPinColor()
+            view.pinTintColor = MKPinAnnotationView.purplePinColor()
             return view
         }
         return nil
