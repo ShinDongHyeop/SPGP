@@ -16,18 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
-    var url : String = "http://openapi.gg.go.kr/CultureFestival?Key=8c1c7bdeab4842f981dd047006ad6886&type=xml"
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
-        if segue.identifier == "segueToTableView" {
-            if let navController = segue.destination as? UINavigationController {
-                if let festivalTableViewController = navController.topViewController as? FestivalTableViewController {
-                    festivalTableViewController.url = url
-                }
-            }
-        }
-    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
