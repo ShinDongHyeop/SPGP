@@ -161,7 +161,11 @@
                                 <segue destination="wUa-yX-8y4" kind="unwind" unwindAction="doneToPickerViewControllerWithSegue:" id="Ie0-Lx-faH"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="za8-Vh-zNw"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="za8-Vh-zNw">
+                            <connections>
+                                <segue destination="SIl-cQ-qyG" kind="show" identifier="segueToMapView" id="qJe-hl-JPm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tbData" destination="2Ao-49-FvG" id="hkF-rh-Evd"/>
@@ -226,11 +230,7 @@
                                 <segue destination="5Ze-LW-pY5" kind="show" id="09y-sg-O4O"/>
                             </connections>
                         </button>
-                        <barButtonItem key="rightBarButtonItem" title="지도" id="I0P-hW-W3W">
-                            <connections>
-                                <segue destination="SIl-cQ-qyG" kind="show" id="Hec-Uj-0P1"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="지도" id="I0P-hW-W3W"/>
                     </navigationItem>
                     <connections>
                         <outlet property="detailTableView" destination="vlC-1B-JCZ" id="GhI-fD-UUS"/>
@@ -260,6 +260,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="PfM-1R-vjP" id="XtN-vA-AGo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Szg-fD-qM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -385,7 +388,11 @@
                                 <segue destination="U6w-47-50V" kind="unwind" unwindAction="doneToPickerViewController2WithSegue:" id="dk1-gz-FM4"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="nuq-4Q-8j4"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="nuq-4Q-8j4">
+                            <connections>
+                                <segue destination="SIl-cQ-qyG" kind="show" id="Wfk-3p-v9n"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tbData" destination="c3V-yU-6Mu" id="Zx1-Jf-iQw"/>
@@ -450,11 +457,7 @@
                                 <segue destination="py2-9s-xyk" kind="show" id="cF8-hB-zEF"/>
                             </connections>
                         </button>
-                        <barButtonItem key="rightBarButtonItem" title="지도" id="rq3-oz-XeT">
-                            <connections>
-                                <segue destination="SIl-cQ-qyG" kind="show" id="tKK-Dd-PJd"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="지도" id="rq3-oz-XeT"/>
                     </navigationItem>
                     <connections>
                         <outlet property="detailTableView" destination="tke-eb-IsI" id="XTz-mn-LDe"/>
@@ -540,6 +543,7 @@
         <!--Navigation Controller-->
         <scene sceneID="uTu-7T-CB9">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y8N-AT-CnC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kau-6k-lkM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Akl-c2-u1d">
@@ -551,13 +555,13 @@
                         <segue destination="FXT-iI-iL1" kind="relationship" relationship="rootViewController" id="eBh-7o-Atg"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y8N-AT-CnC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4328.8000000000002" y="77.811094452773617"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kJL-FM-fKw">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="76P-6c-7mB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RIH-ge-jgG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YsQ-la-jui">
@@ -569,7 +573,6 @@
                         <segue destination="8fz-Ag-Usw" kind="relationship" relationship="rootViewController" id="xWp-h4-96i"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="76P-6c-7mB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4328.8000000000002" y="-600.44977511244383"/>
         </scene>
@@ -593,6 +596,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tKK-Dd-PJd"/>
+        <segue reference="Wfk-3p-v9n"/>
     </inferredMetricsTieBreakers>
 </document>
