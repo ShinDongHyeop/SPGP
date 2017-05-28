@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A131354D1EDA8A4B00C8A773 /* Festival.swift in Sources */ = {isa = PBXBuildFile; fileRef = A131354C1EDA8A4B00C8A773 /* Festival.swift */; };
 		A15EE03B1ED17A11009692D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EE03A1ED17A11009692D2 /* AppDelegate.swift */; };
 		A15EE0401ED17A11009692D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15EE03E1ED17A11009692D2 /* Main.storyboard */; };
 		A15EE0421ED17A11009692D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A15EE0411ED17A11009692D2 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A131354C1EDA8A4B00C8A773 /* Festival.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Festival.swift; sourceTree = "<group>"; };
 		A15EE0371ED17A11009692D2 /* Term Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Term Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A15EE03A1ED17A11009692D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A15EE03F1ED17A11009692D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				A15EE0541ED18E20009692D2 /* DetailFestivalTableViewController.swift */,
 				A1631AD71ED28B53007CE314 /* EventTableViewController.swift */,
 				A1631AD91ED28B73007CE314 /* DetailEventTableViewController.swift */,
+				A131354C1EDA8A4B00C8A773 /* Festival.swift */,
 			);
 			path = "Term Project";
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				A15EE0551ED18E20009692D2 /* DetailFestivalTableViewController.swift in Sources */,
 				A1631AD81ED28B53007CE314 /* EventTableViewController.swift in Sources */,
 				A15EE04D1ED17A71009692D2 /* FestivalTableViewController.swift in Sources */,
+				A131354D1EDA8A4B00C8A773 /* Festival.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

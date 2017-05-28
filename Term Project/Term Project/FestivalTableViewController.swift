@@ -22,6 +22,8 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
     
     var festival_begin = NSMutableString()
     var festival_cont = NSMutableString()
+    var SIGUN_CD = NSMutableString()
+    
     var festivalname = ""
     var festivalname_utf8 = ""
     
@@ -41,7 +43,7 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
     
     func beginParsing() {
         posts = []
-        parser = XMLParser(contentsOf:(URL(string:"http://openapi.gg.go.kr/CultureFestival?Key=8c1c7bdeab4842f981dd047006ad6886&Type=xml"))!)!
+        parser = XMLParser(contentsOf:(URL(string:url!))!)!
         parser.delegate = self
         parser.parse()
         tbData!.reloadData()
@@ -59,6 +61,8 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
             festival_begin = ""
             festival_cont = NSMutableString()
             festival_cont = ""
+            SIGUN_CD = NSMutableString()
+            SIGUN_CD = ""
             
             // 위도 경도
             XPos = NSMutableString()
@@ -75,6 +79,9 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
         }
         else if element.isEqual(to: "FASTVL_CONT") {
             festival_cont.append(string)
+        }
+        else if element.isEqual(to:"SIGUN_CD") {
+            SIGUN_CD.append(string)
         }
         else if element.isEqual(to: "REFINE_WGS84_LOGT") {
             XPos.append(string)
@@ -93,7 +100,6 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
             if !festival_cont.isEqual(nil) {
                 elements.setObject(festival_cont, forKey: "FASTVL_CONT" as NSCopying)
             }
-            
             if !XPos.isEqual(nil) {
                 elements.setObject(XPos, forKey: "REFINE_WGS84_LOGT" as NSCopying)
             }
@@ -120,9 +126,8 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
                 festivalname_utf8 = festivalname.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
                 if let detailFestivalTableViewController = segue.destination as? DetailFestivalTableViewController {
                     detailFestivalTableViewController.url = url
-                    print(detailFestivalTableViewController.url)
+                    //detailFestivalTableViewController.FASTVL = festivalname
                 }
-                
             }
         }
     }
@@ -139,7 +144,7 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
         if(cell.isEqual(NSNull.self)) {
             cell = Bundle.main.loadNibNamed("Cell", owner: self, options: nil)?[0] as! UITableViewCell
         }
-        
+    
         cell.textLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "FASTVL_CONT") as! NSString as String
         cell.detailTextLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "FASTVL_BEGIN_DE") as! NSString as String
         

@@ -87,7 +87,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4om-im-eUW" kind="show" id="rZR-vc-unj">
+                                    <segue destination="4om-im-eUW" kind="show" identifier="segueToTableView" id="rZR-vc-unj">
                                         <nil key="action"/>
                                     </segue>
                                 </connections>
@@ -161,7 +161,11 @@
                                 <segue destination="wUa-yX-8y4" kind="unwind" unwindAction="doneToPickerViewControllerWithSegue:" id="Ie0-Lx-faH"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="za8-Vh-zNw"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="za8-Vh-zNw">
+                            <connections>
+                                <segue destination="SIl-cQ-qyG" kind="show" identifier="segueToMapView" id="6aJ-VE-fmB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tbData" destination="2Ao-49-FvG" id="hkF-rh-Evd"/>
@@ -181,7 +185,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FestivalCell" textLabel="jek-BV-Yda" detailTextLabel="EwT-YV-t3C" style="IBUITableViewCellStyleSubtitle" id="f6c-sv-5ds">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FestivalCell" textLabel="jek-BV-Yda" detailTextLabel="4GS-el-dx8" style="IBUITableViewCellStyleSubtitle" id="f6c-sv-5ds">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f6c-sv-5ds" id="mlW-YU-1gp">
@@ -195,8 +199,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EwT-YV-t3C">
-                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4GS-el-dx8">
+                                            <rect key="frame" x="15" y="25.5" width="33" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -204,9 +208,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="SIl-cQ-qyG" kind="show" identifier="segueToMapView" id="6iP-Hy-6ta"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -222,10 +223,10 @@
             </objects>
             <point key="canvasLocation" x="4329" y="-600"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="O8K-8v-SFf">
             <objects>
-                <viewController id="SIl-cQ-qyG" sceneMemberID="viewController">
+                <viewController id="SIl-cQ-qyG" customClass="MapViewController" customModule="Term_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lg6-gG-KHB"/>
                         <viewControllerLayoutGuide type="bottom" id="YLT-NH-Chm"/>
@@ -241,10 +242,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="PfM-1R-vjP" id="s4F-ur-caN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Szg-fD-qM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5445.6000000000004" y="-275.71214392803603"/>
+            <point key="canvasLocation" x="5761" y="-344"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="H4v-uk-kmY">
@@ -395,6 +399,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nZv-BU-6Wr"/>
+        <segue reference="6aJ-VE-fmB"/>
     </inferredMetricsTieBreakers>
 </document>

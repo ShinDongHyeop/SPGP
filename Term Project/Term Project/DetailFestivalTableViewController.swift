@@ -16,7 +16,7 @@ class DetailFestivalTableViewController: UITableViewController, XMLParserDelegat
     
     var parser = XMLParser()
     let postsname : [String] = ["축제내용", "축제시작일", "축제종료일", "개최장소", "도로명주소", "전화번호", "홈페이지", "주관기관", "주최기관", "후원기관"]
-    var posts : [String] = ["","","","","","","","","",""]
+    var posts : [String] = []
     
     var element = NSString()
     
@@ -31,10 +31,9 @@ class DetailFestivalTableViewController: UITableViewController, XMLParserDelegat
     var PROMOTER_INST_NM = NSMutableString()
     var SUPRT_INST_NM = NSMutableString()
     
-    
     func beginParsing() {
         posts = []
-        parser = XMLParser(contentsOf:(URL(string:"http://openapi.gg.go.kr/CultureFestival?Key=8c1c7bdeab4842f981dd047006ad6886&Type=xml"))!)!
+        parser = XMLParser(contentsOf:(URL(string:url!))!)!
         parser.delegate = self
         parser.parse()
         detailTableView.reloadData()
@@ -48,7 +47,6 @@ class DetailFestivalTableViewController: UITableViewController, XMLParserDelegat
         if (elementName as NSString).isEqual(to: "row")
         {
             posts = ["","","","","","","","","",""]
-
             FASTVL_CONT = NSMutableString()
             FASTVL_CONT = ""
             FASTVL_BEGIN_DE = NSMutableString()
@@ -105,6 +103,7 @@ class DetailFestivalTableViewController: UITableViewController, XMLParserDelegat
         else if element.isEqual(to: "SUPRT_INST_NM") {
             SUPRT_INST_NM.append(string)
         }
+    
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
@@ -140,7 +139,6 @@ class DetailFestivalTableViewController: UITableViewController, XMLParserDelegat
             if !SUPRT_INST_NM.isEqual(nil) {
                 posts[9] = SUPRT_INST_NM as String
             }
-            
         }
     }
     override func viewDidLoad() {
