@@ -23,8 +23,36 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
     
     var festival_begin = NSMutableString()
     var festival_cont = NSMutableString()
-    var festivalname = ""
+    
+    
+    var festivalcont = ""
+    var festivalbegin = ""
+    var festivalend = ""
+    var openmeetplc = ""
+    var refien = ""
+    var telno = ""
+    var addr = ""
+    var mngt = ""
+    var promoter = ""
+    var suprt = ""
+    
     var festivalname_utf8 = ""
+    
+    
+    var FASTVL_END_DE = NSMutableString()
+    var OPENMEET_PLC = NSMutableString()
+    
+    var REFINE_ROADNM_ADDR = NSMutableString()
+    
+    var MNGT_INST_TELNO = NSMutableString()
+    
+    var HMPG_ADDR = NSMutableString()
+    
+    var MNGT_INST_NM = NSMutableString()
+    
+    var PROMOTER_INST_NM = NSMutableString()
+    
+    var SUPRT_INST_NM = NSMutableString()
     
     var XPos = NSMutableString()
     var YPos = NSMutableString()
@@ -59,6 +87,7 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
             elements = [:]
             festival_begin = NSMutableString()
             festival_begin = ""
+            
             festival_cont = NSMutableString()
             festival_cont = ""
             
@@ -67,6 +96,33 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
             XPos = ""
             YPos = NSMutableString()
             YPos = ""
+        
+            FASTVL_END_DE = NSMutableString()
+            FASTVL_END_DE = ""
+            
+            OPENMEET_PLC = NSMutableString()
+            OPENMEET_PLC = ""
+            
+            REFINE_ROADNM_ADDR = NSMutableString()
+            REFINE_ROADNM_ADDR = ""
+            
+            MNGT_INST_TELNO = NSMutableString()
+            MNGT_INST_TELNO = ""
+            
+            HMPG_ADDR = NSMutableString()
+            HMPG_ADDR = ""
+            
+            MNGT_INST_NM = NSMutableString()
+            MNGT_INST_NM = ""
+            
+            PROMOTER_INST_NM = NSMutableString()
+            PROMOTER_INST_NM = ""
+            
+            SUPRT_INST_NM = NSMutableString()
+            SUPRT_INST_NM = ""
+
+        
+        
         }
     }
     
@@ -84,6 +140,31 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
         else if element.isEqual(to: "REFINE_WGS84_LAT") {
             YPos.append(string)
         }
+        else if element.isEqual(to: "FASTVL_END_DE") {
+            FASTVL_END_DE.append(string)
+        }
+        else if element.isEqual(to: "OPENMEET_PLC") {
+            OPENMEET_PLC.append(string)
+        }
+        else if element.isEqual(to: "REFINE_ROADNM_ADDR") {
+            REFINE_ROADNM_ADDR.append(string)
+        }
+        else if element.isEqual(to: "MNGT_INST_TELNO") {
+            MNGT_INST_TELNO.append(string)
+        }
+        else if element.isEqual(to: "HMPG_ADDR") {
+            HMPG_ADDR.append(string)
+        }
+        else if element.isEqual(to: "MNGT_INST_NM") {
+            MNGT_INST_NM.append(string)
+        }
+        else if element.isEqual(to: "PROMOTER_INST_NM") {
+            SUPRT_INST_NM.append(string)
+        }
+        else if element.isEqual(to: "SUPRT_INST_NM") {
+            SUPRT_INST_NM.append(string)
+        }
+
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
@@ -102,6 +183,31 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
             if !YPos.isEqual(nil) {
                 elements.setObject(YPos, forKey: "REFINE_WGS84_LAT" as NSCopying)
             }
+            if !FASTVL_END_DE.isEqual(nil) {
+                elements.setObject(FASTVL_END_DE, forKey: "FASTVL_END_DE" as NSCopying)
+            }
+            if !OPENMEET_PLC.isEqual(nil) {
+                elements.setObject(OPENMEET_PLC, forKey: "OPENMEET_PLC" as NSCopying)
+            }
+            if !REFINE_ROADNM_ADDR.isEqual(nil) {
+                elements.setObject(REFINE_ROADNM_ADDR, forKey: "REFINE_ROADNM_ADDR" as NSCopying)
+            }
+            if !MNGT_INST_TELNO.isEqual(nil) {
+                elements.setObject(MNGT_INST_TELNO, forKey: "MNGT_INST_TELNO" as NSCopying)
+            }
+            if !HMPG_ADDR.isEqual(nil) {
+                elements.setObject(HMPG_ADDR, forKey: "HMPG_ADDR" as NSCopying)
+            }
+            if !MNGT_INST_NM.isEqual(nil) {
+                elements.setObject(MNGT_INST_NM, forKey: "MNGT_INST_NM" as NSCopying)
+            }
+            if !SUPRT_INST_NM.isEqual(nil) {
+                elements.setObject(SUPRT_INST_NM, forKey: "PROMOTER_INST_NM" as NSCopying)
+            }
+            if !SUPRT_INST_NM.isEqual(nil) {
+                elements.setObject(SUPRT_INST_NM, forKey: "SUPRT_INST_NM" as NSCopying)
+            }
+            
             posts.add(elements)
         }
     }
@@ -117,13 +223,39 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
         if segue.identifier == "segueToFestivalDetail" {
             if let cell = sender as? UITableViewCell {
                 let indexPath = tableView.indexPath(for: cell)
-                festivalname = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "FASTVL_CONT") as! NSString as String
+                festivalcont = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "FASTVL_CONT") as! NSString as String
+                
+                festivalbegin = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "FASTVL_BEGIN_DE") as! NSString as String
+                festivalend = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "FASTVL_END_DE") as! NSString as String
+                openmeetplc = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "OPENMEET_PLC") as! NSString as String
+                refien = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "REFINE_ROADNM_ADDR") as! NSString as String
+                
+                telno = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "MNGT_INST_TELNO") as! NSString as String
+                addr = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "HMPG_ADDR") as! NSString as String
+                mngt = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "MNGT_INST_NM") as! NSString as String
+                promoter = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "PROMOTER_INST_NM") as! NSString as String
+                suprt = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "SUPRT_INST_NM") as! NSString as String
+
                 // url에서 한글을 쓸 수 있도록 코딩
-                festivalname_utf8 = festivalname.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-                if let detailFestivalTableViewController = segue.destination as? DetailFestivalTableViewController {
-                    detailFestivalTableViewController.url = url
-                    print(detailFestivalTableViewController.url)
+               
+            if let navController = segue.destination as? UINavigationController {
+                    if let detailFestivalTableViewController = navController.topViewController as? DetailFestivalTableViewController {
+                        detailFestivalTableViewController.FASTVL_CONT = festivalcont
+                        detailFestivalTableViewController.FASTVL_BEGIN_DE = festivalbegin
+                        detailFestivalTableViewController.FASTVL_END_DE = festivalend
+                        detailFestivalTableViewController.OPENMEET_PLC = openmeetplc
+                        detailFestivalTableViewController.REFINE_ROADNM_ADDR = refien
+                        detailFestivalTableViewController.MNGT_INST_TELNO = telno
+                        detailFestivalTableViewController.HMPG_ADDR = addr
+                        detailFestivalTableViewController.MNGT_INST_NM = mngt
+                        detailFestivalTableViewController.PROMOTER_INST_NM = promoter
+                        detailFestivalTableViewController.SUPRT_INST_NM = suprt
+
+                        
+
+                    }
                 }
+                
                 
             }
         }

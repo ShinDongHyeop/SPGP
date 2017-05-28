@@ -22,129 +22,33 @@ class DetailFestivalTableViewController: UITableViewController, XMLParserDelegat
     
     var element = NSString()
     
-    var FASTVL_CONT = NSMutableString()
-    var FASTVL_BEGIN_DE = NSMutableString()
-    var FASTVL_END_DE = NSMutableString()
-    var OPENMEET_PLC = NSMutableString()
-    var REFINE_ROADNM_ADDR = NSMutableString()
-    var MNGT_INST_TELNO = NSMutableString()
-    var HMPG_ADDR = NSMutableString()
-    var MNGT_INST_NM = NSMutableString()
-    var PROMOTER_INST_NM = NSMutableString()
-    var SUPRT_INST_NM = NSMutableString()
+    var FASTVL_CONT = String()
+    var FASTVL_BEGIN_DE = String()
+    var FASTVL_END_DE = String()
+    var OPENMEET_PLC = String()
+    var REFINE_ROADNM_ADDR = String()
+    var MNGT_INST_TELNO = String()
+    var HMPG_ADDR = String()
+    var MNGT_INST_NM = String()
+    var PROMOTER_INST_NM = String()
+    var SUPRT_INST_NM = String()
     
     
     func beginParsing() {
-        posts = []
-        parser = XMLParser(contentsOf:(URL(string:"http://openapi.gg.go.kr/CultureFestival?Key=8c1c7bdeab4842f981dd047006ad6886&Type=xml"))!)!
-        parser.delegate = self
-        parser.parse()
+        posts[0] = FASTVL_CONT
+        posts[1] = FASTVL_BEGIN_DE
+        posts[2] = FASTVL_END_DE
+        posts[3] = OPENMEET_PLC
+        posts[4] = REFINE_ROADNM_ADDR
+        posts[5] = MNGT_INST_TELNO
+        posts[6] = HMPG_ADDR
+        posts[7] = MNGT_INST_NM
+        posts[8] = PROMOTER_INST_NM
+        posts[9] = SUPRT_INST_NM
+        
         detailTableView.reloadData()
     }
     
-    // parser가 새로운 element를 발견하면 변수를 생성한다.
-    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?,  attributes attributeDict: [String : String])
-    {
-        element = elementName as NSString
-        
-        if (elementName as NSString).isEqual(to: "row")
-        {
-            posts = ["","","","","","","","","",""]
-
-            FASTVL_CONT = NSMutableString()
-            FASTVL_CONT = ""
-            FASTVL_BEGIN_DE = NSMutableString()
-            FASTVL_BEGIN_DE = ""
-            FASTVL_END_DE = NSMutableString()
-            FASTVL_END_DE = ""
-            OPENMEET_PLC = NSMutableString()
-            OPENMEET_PLC = ""
-            REFINE_ROADNM_ADDR = NSMutableString()
-            REFINE_ROADNM_ADDR = ""
-            MNGT_INST_TELNO = NSMutableString()
-            MNGT_INST_TELNO = ""
-            HMPG_ADDR = NSMutableString()
-            HMPG_ADDR = ""
-            MNGT_INST_NM = NSMutableString()
-            MNGT_INST_NM = ""
-            PROMOTER_INST_NM = NSMutableString()
-            PROMOTER_INST_NM = ""
-            SUPRT_INST_NM = NSMutableString()
-            SUPRT_INST_NM = ""
-        }
-    }
-    
-    // title과 pubDate를 발견하면 title1과 date에 완성한다.
-    func parser(_ parser: XMLParser, foundCharacters string: String)
-    {
-        if element.isEqual(to: "FASTVL_CONT") {
-            FASTVL_CONT.append(string)
-        }
-        else if element.isEqual(to: "FASTVL_BEGIN_DE") {
-            FASTVL_BEGIN_DE.append(string)
-        }
-        else if element.isEqual(to: "FASTVL_END_DE") {
-            FASTVL_END_DE.append(string)
-        }
-        else if element.isEqual(to: "OPENMEET_PLC") {
-            OPENMEET_PLC.append(string)
-        }
-        else if element.isEqual(to: "REFINE_ROADNM_ADDR") {
-            REFINE_ROADNM_ADDR.append(string)
-        }
-        else if element.isEqual(to: "MNGT_INST_TELNO") {
-            MNGT_INST_TELNO.append(string)
-        }
-        else if element.isEqual(to: "HMPG_ADDR") {
-            HMPG_ADDR.append(string)
-        }
-        else if element.isEqual(to: "MNGT_INST_NM") {
-            MNGT_INST_NM.append(string)
-        }
-        else if element.isEqual(to: "PROMOTER_INST_NM") {
-            PROMOTER_INST_NM.append(string)
-        }
-        else if element.isEqual(to: "SUPRT_INST_NM") {
-            SUPRT_INST_NM.append(string)
-        }
-    }
-    
-    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
-    {
-        if (elementName as NSString).isEqual(to: "row") {
-            if !FASTVL_CONT.isEqual(nil) {
-                posts[0] = FASTVL_CONT as String
-            }
-            if !FASTVL_BEGIN_DE.isEqual(nil) {
-                posts[1] = FASTVL_BEGIN_DE as String
-            }
-            if !FASTVL_END_DE.isEqual(nil) {
-                posts[2] = FASTVL_END_DE as String
-            }
-            if !OPENMEET_PLC.isEqual(nil) {
-                posts[3] = OPENMEET_PLC as String
-            }
-            if !REFINE_ROADNM_ADDR.isEqual(nil) {
-                posts[4] = REFINE_ROADNM_ADDR as String
-            }
-            if !MNGT_INST_TELNO.isEqual(nil) {
-                posts[5] = MNGT_INST_TELNO as String
-            }
-            if !HMPG_ADDR.isEqual(nil) {
-                posts[6] = HMPG_ADDR as String
-            }
-            if !MNGT_INST_NM.isEqual(nil) {
-                posts[7] = MNGT_INST_NM as String
-            }
-            if !PROMOTER_INST_NM.isEqual(nil) {
-                posts[8] = PROMOTER_INST_NM as String
-            }
-            if !SUPRT_INST_NM.isEqual(nil) {
-                posts[9] = SUPRT_INST_NM as String
-            }
-            
-        }
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         beginParsing()
