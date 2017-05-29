@@ -54,7 +54,7 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
     var PROMOTER_INST_NM = NSMutableString()
     
     var SUPRT_INST_NM = NSMutableString()
-    
+    var SIGUN_NM = NSMutableString()
     var XPos = NSMutableString()
     var YPos = NSMutableString()
     
@@ -103,7 +103,8 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
         
             FASTVL_END_DE = NSMutableString()
             FASTVL_END_DE = ""
-            
+            SIGUN_NM = NSMutableString()
+            SIGUN_NM = ""
             OPENMEET_PLC = NSMutableString()
             OPENMEET_PLC = ""
             
@@ -136,7 +137,6 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
             festival_begin.append(string)
             if festival_begin.hasPrefix("2017") {
                 FASTVL_BEGIN_DE.append(string)
-                print("FASTVL_BEGN : " , FASTVL_BEGIN_DE)
             }
             else {
             }
@@ -175,6 +175,9 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
         }
         else if element.isEqual(to: "SUPRT_INST_NM") {
             SUPRT_INST_NM.append(string)
+        }
+        else if element.isEqual(to: "SIGUN_NM") {
+            SIGUN_NM.append(string)
         }
 
     }
@@ -217,6 +220,9 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
             }
             if !SUPRT_INST_NM.isEqual(nil) {
                 elements.setObject(SUPRT_INST_NM, forKey: "SUPRT_INST_NM" as NSCopying)
+            }
+            if !SIGUN_NM.isEqual(nil) {
+                elements.setObject(SIGUN_NM, forKey: "SIGUN_NM" as NSCopying)
             }
             posts.add(elements)
         }

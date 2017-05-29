@@ -42,9 +42,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let HMPG_ADDR = (post as AnyObject).value(forKey: "FASTVL_BEGIN_DE") as! NSString as String
             let XPos = (post as AnyObject).value(forKey: "REFINE_WGS84_LOGT") as! NSString as String
             let YPos = (post as AnyObject).value(forKey: "REFINE_WGS84_LAT") as! NSString as String
+            let sigun_nm = (post as AnyObject).value(forKey: "SIGUN_NM") as! NSString as String
             let lat = (YPos as NSString).doubleValue
             let lon = (XPos as NSString).doubleValue
-            let festival = Festival(title: FASTVL_CONT, locationName: HMPG_ADDR, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon))
+            let festival = Festival(title: FASTVL_CONT, locationName: HMPG_ADDR, SIGUN_NM: sigun_nm, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon))
             
             festivals.append(festival)
         }
@@ -76,7 +77,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIView
             }
-            view.pinTintColor = MKPinAnnotationView.greenPinColor()
+            view.pinTintColor = annotation.pinTintColor()
             return view
         }
         return nil
