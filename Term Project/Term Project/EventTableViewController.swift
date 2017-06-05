@@ -173,6 +173,7 @@ class EventTableViewController: UITableViewController ,XMLParserDelegate{
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
     {
         if (elementName as NSString).isEqual(to: "row") {
+            if event_begin.hasPrefix("2017"){
             if !event_begin.isEqual(nil) {
                 elements.setObject(event_begin, forKey: "EVENT_BEGIN_DE" as NSCopying)
             }
@@ -222,6 +223,7 @@ class EventTableViewController: UITableViewController ,XMLParserDelegate{
             }
            
             posts.add(elements)
+            }
         }
     }
 
