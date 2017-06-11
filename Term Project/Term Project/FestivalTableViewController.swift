@@ -15,7 +15,7 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
     
     @IBOutlet var tbData: UITableView!
     var url: String?
-    
+    var date : Int?
     var parser = XMLParser()
     var posts = NSMutableArray()
     var elements = NSMutableDictionary()
@@ -35,6 +35,9 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
     var mngt = ""
     var promoter = ""
     var suprt = ""
+    
+    var xpos = ""
+    var ypos = ""
     
     var festivalname_utf8 = ""
     
@@ -71,7 +74,14 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
     
     func beginParsing() {
         posts = []
-        parser = XMLParser(contentsOf:(URL(string:"http://openapi.gg.go.kr/CultureFestival?Key=8c1c7bdeab4842f981dd047006ad6886&Type=xml"))!)!
+        if url == nil {
+            parser = XMLParser(contentsOf:(URL(string: "http://openapi.gg.go.kr/CultureFestival?Key=8c1c7bdeab4842f981dd047006ad6886&Type=xml&SIGUN_CD=41000" ))!)!
+        
+        }
+        else
+        {
+            parser = XMLParser(contentsOf:(URL(string: url! ))!)!
+        }
         parser.delegate = self
         parser.parse()
         tbData!.reloadData()
@@ -179,6 +189,7 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
     {
         if (elementName as NSString).isEqual(to: "row") {
+            if date == 1 {
             if FASTVL_BEGIN_DE.hasPrefix("2017"){
             if !FASTVL_BEGIN_DE.isEqual(nil) {
                 elements.setObject(FASTVL_BEGIN_DE, forKey: "FASTVL_BEGIN_DE" as NSCopying)
@@ -221,8 +232,56 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
             }
             posts.add(elements)
             }
+            }
+            else {
+                if !FASTVL_BEGIN_DE.hasPrefix("2017"){
+                    if !FASTVL_BEGIN_DE.isEqual(nil) {
+                        elements.setObject(FASTVL_BEGIN_DE, forKey: "FASTVL_BEGIN_DE" as NSCopying)
+                    }
+                    if !festival_cont.isEqual(nil) {
+                        elements.setObject(festival_cont, forKey: "FASTVL_CONT" as NSCopying)
+                    }
+                    if !XPos.isEqual(nil) {
+                        elements.setObject(XPos, forKey: "REFINE_WGS84_LOGT" as NSCopying)
+                    }
+                    if !YPos.isEqual(nil) {
+                        elements.setObject(YPos, forKey: "REFINE_WGS84_LAT" as NSCopying)
+                    }
+                    if !FASTVL_END_DE.isEqual(nil) {
+                        elements.setObject(FASTVL_END_DE, forKey: "FASTVL_END_DE" as NSCopying)
+                    }
+                    if !OPENMEET_PLC.isEqual(nil) {
+                        elements.setObject(OPENMEET_PLC, forKey: "OPENMEET_PLC" as NSCopying)
+                    }
+                    if !REFINE_ROADNM_ADDR.isEqual(nil) {
+                        elements.setObject(REFINE_ROADNM_ADDR, forKey: "REFINE_ROADNM_ADDR" as NSCopying)
+                    }
+                    if !MNGT_INST_TELNO.isEqual(nil) {
+                        elements.setObject(MNGT_INST_TELNO, forKey: "MNGT_INST_TELNO" as NSCopying)
+                    }
+                    if !HMPG_ADDR.isEqual(nil) {
+                        elements.setObject(HMPG_ADDR, forKey: "HMPG_ADDR" as NSCopying)
+                    }
+                    if !MNGT_INST_NM.isEqual(nil) {
+                        elements.setObject(MNGT_INST_NM, forKey: "MNGT_INST_NM" as NSCopying)
+                    }
+                    if !SUPRT_INST_NM.isEqual(nil) {
+                        elements.setObject(SUPRT_INST_NM, forKey: "PROMOTER_INST_NM" as NSCopying)
+                    }
+                    if !SUPRT_INST_NM.isEqual(nil) {
+                        elements.setObject(SUPRT_INST_NM, forKey: "SUPRT_INST_NM" as NSCopying)
+                    }
+                    if !SIGUN_NM.isEqual(nil) {
+                        elements.setObject(SIGUN_NM, forKey: "SIGUN_NM" as NSCopying)
+                    }
+                    posts.add(elements)
+                }
+                
+                
+            }
+           
         }
-    }
+            }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if segue.identifier == "segueToMapView" {
@@ -248,6 +307,9 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
                 promoter = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "PROMOTER_INST_NM") as! NSString as String
                 suprt = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "SUPRT_INST_NM") as! NSString as String
 
+                xpos = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "REFINE_WGS84_LOGT") as! NSString as String
+                ypos = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "REFINE_WGS84_LAT") as! NSString as String
+
                 // url에서 한글을 쓸 수 있도록 코딩
                
             if let navController = segue.destination as? UINavigationController {
@@ -262,6 +324,9 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
                         detailFestivalTableViewController.MNGT_INST_NM = mngt
                         detailFestivalTableViewController.PROMOTER_INST_NM = promoter
                         detailFestivalTableViewController.SUPRT_INST_NM = suprt
+                        detailFestivalTableViewController.XPOS = xpos
+                        detailFestivalTableViewController.YPOS = ypos
+
 
                     }
                 }

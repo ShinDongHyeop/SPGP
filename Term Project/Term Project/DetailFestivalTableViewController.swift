@@ -19,7 +19,7 @@ class DetailFestivalTableViewController: UITableViewController, XMLParserDelegat
     var posts : [String] = ["","","","","","","","","",""]
     
     var element = NSString()
-    
+    var posts2 = NSMutableArray()
     var FASTVL_CONT = String()
     var FASTVL_BEGIN_DE = String()
     var FASTVL_END_DE = String()
@@ -30,7 +30,8 @@ class DetailFestivalTableViewController: UITableViewController, XMLParserDelegat
     var MNGT_INST_NM = String()
     var PROMOTER_INST_NM = String()
     var SUPRT_INST_NM = String()
-    
+    var XPOS = String()
+    var YPOS = String()
     func beginParsing() {
         posts[0] = FASTVL_CONT
         posts[1] = FASTVL_BEGIN_DE
@@ -60,6 +61,22 @@ class DetailFestivalTableViewController: UITableViewController, XMLParserDelegat
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        posts2.add(XPOS)
+
+        posts2.add(YPOS)
+       
+        if segue.identifier == "segueToMapView" {
+            if let mapViewController = segue.destination as? MapViewController {
+                mapViewController.posts = posts2 
+               
+            }
+        }
+        
+        }
+
 
     // MARK: - Table view data source
 

@@ -14,7 +14,7 @@ class EventTableViewController: UITableViewController ,XMLParserDelegate{
     }
     var url: String?
     
-   
+    var date : Int?
     @IBOutlet var tbData: UITableView!
     var parser = XMLParser()
     var posts = NSMutableArray()
@@ -74,7 +74,15 @@ class EventTableViewController: UITableViewController ,XMLParserDelegate{
     
     func beginParsing() {
         posts = []
-        parser = XMLParser(contentsOf:(URL(string:"http://openapi.gg.go.kr/PerformanceEvent?key=4f589fa06a6c405b94e4cc085acb5736&Type=xml"))!)!
+        if url == nil {
+            parser = XMLParser(contentsOf:(URL(string: "http://openapi.gg.go.kr/PerformanceEvent?key=4f589fa06a6c405b94e4cc085acb5736&SIGUN_CD=41000" ))!)!
+            
+        }
+        else{
+             parser = XMLParser(contentsOf:(URL(string: url!))!)!
+        }
+
+       
         parser.delegate = self
         parser.parse()
         tbData!.reloadData()
@@ -173,6 +181,7 @@ class EventTableViewController: UITableViewController ,XMLParserDelegate{
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
     {
         if (elementName as NSString).isEqual(to: "row") {
+            if date == 1 {
             if event_begin.hasPrefix("2017"){
             if !event_begin.isEqual(nil) {
                 elements.setObject(event_begin, forKey: "EVENT_BEGIN_DE" as NSCopying)
@@ -223,6 +232,61 @@ class EventTableViewController: UITableViewController ,XMLParserDelegate{
             }
            
             posts.add(elements)
+            }
+            }
+            else {
+                if !event_begin.hasPrefix("2017"){
+                    if !event_begin.isEqual(nil) {
+                        elements.setObject(event_begin, forKey: "EVENT_BEGIN_DE" as NSCopying)
+                    }
+                    if !event_cont.isEqual(nil) {
+                        elements.setObject(event_cont, forKey: "EVENT_CONT" as NSCopying)
+                    }
+                    
+                    if !XPos.isEqual(nil) {
+                        elements.setObject(XPos, forKey: "REFINE_WGS84_LOGT" as NSCopying)
+                    }
+                    if !YPos.isEqual(nil) {
+                        elements.setObject(YPos, forKey: "REFINE_WGS84_LAT" as NSCopying)
+                    }
+                    
+                    if !eevent_title.isEqual(nil) {
+                        elements.setObject(eevent_title, forKey: "EVENT_TITLE" as NSCopying)
+                    }
+                    
+                    if !eevent_end_de.isEqual(nil) {
+                        elements.setObject(eevent_end_de, forKey: "EVENT_END_DE" as NSCopying)
+                    }
+                    if !eopenmeet_plc.isEqual(nil) {
+                        elements.setObject(eopenmeet_plc, forKey: "EVENT_PLC" as NSCopying)
+                    }
+                    
+                    if !erefine_roadnm_addr.isEqual(nil) {
+                        elements.setObject(erefine_roadnm_addr, forKey: "REFINE_ROADNM_ADDR" as NSCopying)
+                    }
+                    
+                    if !ehmpg_addr.isEqual(nil) {
+                        elements.setObject(ehmpg_addr, forKey: "HMPG_ADDR" as NSCopying)
+                    }
+                    
+                    if !emngt_inst_nm.isEqual(nil) {
+                        elements.setObject(emngt_inst_nm, forKey: "MNGT_INST_NM" as NSCopying)
+                    }
+                    
+                    if !epromoter_inst_nm.isEqual(nil) {
+                        elements.setObject(epromoter_inst_nm, forKey: "PROMOTER_INST_NM" as NSCopying)
+                    }
+                    
+                    if !esuprt_inst_nm.isEqual(nil) {
+                        elements.setObject(esuprt_inst_nm, forKey: "SUPRT_INST_NM" as NSCopying)
+                    }
+                    if !emngt_inst_telno.isEqual(nil) {
+                        elements.setObject(emngt_inst_telno, forKey: "MNGT_INST_TELNO" as NSCopying)
+                    }
+                    
+                    posts.add(elements)
+                }
+
             }
         }
     }

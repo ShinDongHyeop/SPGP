@@ -22,6 +22,8 @@
 		A15EE0571ED19A80009692D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EE0561ED19A80009692D2 /* ViewController.swift */; };
 		A1631AD81ED28B53007CE314 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1631AD71ED28B53007CE314 /* EventTableViewController.swift */; };
 		A1631ADA1ED28B73007CE314 /* DetailEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1631AD91ED28B73007CE314 /* DetailEventTableViewController.swift */; };
+		A17A1E6F1EED45D6007A04EE /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17A1E6E1EED45D6007A04EE /* EventViewController.swift */; };
+		A1F5ACD41EECF8C80007F239 /* FestivalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F5ACD31EECF8C80007F239 /* FestivalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		A15EE0561ED19A80009692D2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A1631AD71ED28B53007CE314 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		A1631AD91ED28B73007CE314 /* DetailEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailEventTableViewController.swift; sourceTree = "<group>"; };
+		A17A1E6E1EED45D6007A04EE /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		A1F5ACD31EECF8C80007F239 /* FestivalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestivalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 				A1631AD91ED28B73007CE314 /* DetailEventTableViewController.swift */,
 				A118C80F1EDAD7780073FDB9 /* Event.swift */,
 				A1306EE31ED574E500E4A985 /* EventMarkTableViewController.swift */,
+				A1F5ACD31EECF8C80007F239 /* FestivalViewController.swift */,
+				A17A1E6E1EED45D6007A04EE /* EventViewController.swift */,
 			);
 			path = "Term Project";
 			sourceTree = "<group>";
@@ -176,8 +182,10 @@
 				A118C8121EDAE4690073FDB9 /* Map2ViewController.swift in Sources */,
 				A15EE0511ED1828E009692D2 /* MapViewController.swift in Sources */,
 				A15EE0551ED18E20009692D2 /* DetailFestivalTableViewController.swift in Sources */,
+				A17A1E6F1EED45D6007A04EE /* EventViewController.swift in Sources */,
 				A1306EE41ED574E500E4A985 /* EventMarkTableViewController.swift in Sources */,
 				A1631AD81ED28B53007CE314 /* EventTableViewController.swift in Sources */,
+				A1F5ACD41EECF8C80007F239 /* FestivalViewController.swift in Sources */,
 				A15EE04D1ED17A71009692D2 /* FestivalTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
