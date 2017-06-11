@@ -12,13 +12,14 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
-    var posts = NSMutableArray()
+    var XPos = String()
+    var YPos = String()
+    var FASTVL_CONT = String()
+    var FASTVL_BEGIN_DE = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let initialLocation = CLLocation(latitude: 37.319672, longitude: 126.822556)
-        
         centerMapOnLocation(location: initialLocation)
         mapView.delegate = self
         loadInitialData()
@@ -37,18 +38,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var festivals = [Festival]()
     
     func loadInitialData() {
-        for post in posts {
-            let FASTVL_CONT = (post as AnyObject).value(forKey: "FASTVL_CONT") as! NSString as String
-            let HMPG_ADDR = (post as AnyObject).value(forKey: "FASTVL_BEGIN_DE") as! NSString as String
-            let XPos = (post as AnyObject).value(forKey: "REFINE_WGS84_LOGT") as! NSString as String
-            let YPos = (post as AnyObject).value(forKey: "REFINE_WGS84_LAT") as! NSString as String
-            let sigun_nm = (post as AnyObject).value(forKey: "SIGUN_NM") as! NSString as String
-            let lat = (YPos as NSString).doubleValue
-            let lon = (XPos as NSString).doubleValue
-            let festival = Festival(title: FASTVL_CONT, locationName: HMPG_ADDR, SIGUN_NM: sigun_nm, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon))
-            
-            festivals.append(festival)
-        }
+        let lat = (YPos as NSString).doubleValue
+        let lon = (XPos as NSString).doubleValue
+        let festival = Festival(title: FASTVL_CONT, locationName: FASTVL_BEGIN_DE, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon))
+        festivals.append(festival)
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, celloutAccessoryControlTapped control: UIControl)
@@ -77,7 +70,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIView
             }
-            view.pinTintColor = annotation.pinTintColor()
+            MKPinAnnotationView.purplePinColor()
             return view
         }
         return nil

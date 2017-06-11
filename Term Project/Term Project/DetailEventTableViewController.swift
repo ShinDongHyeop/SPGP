@@ -22,33 +22,34 @@ class DetailEventTableViewController: UITableViewController , XMLParserDelegate{
     
     var element = NSString()
     
-    var EVENT_CONT : String?
-    var EVENT_TITLE : String?
-
-    var EVENT_BEGIN_DE : String?
-    var EVENT_END_DE  : String?
-    var OPENMEET_PLC : String?
-    var REFINE_ROADNM_ADDR : String?
-    var MNGT_INST_TELNO : String?
-    var HMPG_ADDR : String?
-    var MNGT_INST_NM : String?
-    var PROMOTER_INST_NM : String?
-    var SUPRT_INST_NM : String?
+    var EVENT_CONT = String()
+    var EVENT_TITLE = String()
     
+    var EVENT_BEGIN_DE = String()
+    var EVENT_END_DE  = String()
+    var OPENMEET_PLC = String()
+    var REFINE_ROADNM_ADDR = String()
+    var MNGT_INST_TELNO = String()
+    var HMPG_ADDR = String()
+    var MNGT_INST_NM = String()
+    var PROMOTER_INST_NM = String()
+    var SUPRT_INST_NM = String()
+    var XPOS = String()
+    var YPOS = String()
     
     func beginParsing() {
         
-        posts[0] = EVENT_TITLE!
-        posts[1] = EVENT_CONT!
-        posts[2] = EVENT_BEGIN_DE!
-        posts[3] = EVENT_END_DE!
-        posts[4] = OPENMEET_PLC!
-        posts[5] = REFINE_ROADNM_ADDR!
-        posts[6] = MNGT_INST_TELNO!
-        posts[7] = HMPG_ADDR!
-        posts[8] = MNGT_INST_NM!
-        posts[9] = PROMOTER_INST_NM!
-        posts[10] = SUPRT_INST_NM!
+        posts[0] = EVENT_TITLE
+        posts[1] = EVENT_CONT
+        posts[2] = EVENT_BEGIN_DE
+        posts[3] = EVENT_END_DE
+        posts[4] = OPENMEET_PLC
+        posts[5] = REFINE_ROADNM_ADDR
+        posts[6] = MNGT_INST_TELNO
+        posts[7] = HMPG_ADDR
+        posts[8] = MNGT_INST_NM
+        posts[9] = PROMOTER_INST_NM
+        posts[10] = SUPRT_INST_NM
 
         detailTableView.reloadData()
     }
@@ -57,12 +58,24 @@ class DetailEventTableViewController: UITableViewController , XMLParserDelegate{
        // title과 pubDate를 발견하면 title1과 date에 완성한다.
        override func viewDidLoad() {
         super.viewDidLoad()
+        print("Datail XPOS = ", XPOS)
         beginParsing()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+ 
+        if segue.identifier == "segueToMapView" {
+            if let mapView2Controller = segue.destination as? MapView2Controller {
+                mapView2Controller.XPos = XPOS
+                mapView2Controller.YPos = YPOS
+                mapView2Controller.EVENT_TITLE = EVENT_TITLE
+                mapView2Controller.EVENT_BEGIN_DE = EVENT_BEGIN_DE
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

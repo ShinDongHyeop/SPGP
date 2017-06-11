@@ -12,13 +12,14 @@ import MapKit
 class MapView2Controller: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
-    var posts2 = NSMutableArray()
+    var EVENT_TITLE = String()
+    var EVENT_BEGIN_DE = String()
+    var XPos = String()
+    var YPos = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let initialLocation = CLLocation(latitude: 37.319672, longitude: 126.822556)
-        
         centerMapOnLocation(location: initialLocation)
         mapView.delegate = self
         loadInitialData()
@@ -37,17 +38,12 @@ class MapView2Controller: UIViewController, MKMapViewDelegate {
     var events = [Event]()
     
     func loadInitialData() {
-        for post in posts2 {
-            let EVENT_TITLE = (post as AnyObject).value(forKey: "EVENT_TITLE") as! NSString as String
-            let EVENT_BEGIN_DE = (post as AnyObject).value(forKey: "EVENT_BEGIN_DE") as! NSString as String
-            let XPos = (post as AnyObject).value(forKey: "REFINE_WGS84_LOGT") as! NSString as String
-            let YPos = (post as AnyObject).value(forKey: "REFINE_WGS84_LAT") as! NSString as String
-            let lat = (YPos as NSString).doubleValue
-            let lon = (XPos as NSString).doubleValue
-            let event = Event(title: EVENT_TITLE, locationName: EVENT_BEGIN_DE, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon))
-            
-            events.append(event)
-        }
+        print(XPos)
+        print(YPos)
+        let lat = (YPos as NSString).doubleValue
+        let lon = (XPos as NSString).doubleValue
+        let event = Event(title: EVENT_TITLE, locationName: EVENT_BEGIN_DE, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon))
+        events.append(event)
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, celloutAccessoryControlTapped control: UIControl)
@@ -76,7 +72,7 @@ class MapView2Controller: UIViewController, MKMapViewDelegate {
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIView
             }
-            view.pinTintColor = MKPinAnnotationView.purplePinColor()
+            MKPinAnnotationView.greenPinColor()
             return view
         }
         return nil

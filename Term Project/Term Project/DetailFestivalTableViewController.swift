@@ -20,7 +20,7 @@ class DetailFestivalTableViewController: UITableViewController, XMLParserDelegat
     
     var element = NSString()
     var posts2 = NSMutableArray()
-    var FASTVL_CONT = String()
+    var fastvl_cont = String()
     var FASTVL_BEGIN_DE = String()
     var FASTVL_END_DE = String()
     var OPENMEET_PLC = String()
@@ -32,9 +32,10 @@ class DetailFestivalTableViewController: UITableViewController, XMLParserDelegat
     var SUPRT_INST_NM = String()
     var XPOS = String()
     var YPOS = String()
+    
     func beginParsing() {
-        posts[0] = FASTVL_CONT
-        posts[1] = FASTVL_BEGIN_DE
+        posts[0] = fastvl_cont as String
+        posts[1] = FASTVL_BEGIN_DE as String
         posts[2] = FASTVL_END_DE
         posts[3] = OPENMEET_PLC
         posts[4] = REFINE_ROADNM_ADDR
@@ -43,12 +44,12 @@ class DetailFestivalTableViewController: UITableViewController, XMLParserDelegat
         posts[7] = MNGT_INST_NM
         posts[8] = PROMOTER_INST_NM
         posts[9] = SUPRT_INST_NM
-        
         detailTableView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                        print("detail XPOS : ", XPOS)
         beginParsing()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -64,18 +65,15 @@ class DetailFestivalTableViewController: UITableViewController, XMLParserDelegat
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
-        posts2.add(XPOS)
-
-        posts2.add(YPOS)
-       
         if segue.identifier == "segueToMapView" {
             if let mapViewController = segue.destination as? MapViewController {
-                mapViewController.posts = posts2 
-               
+                mapViewController.XPos = XPOS
+                mapViewController.YPos = YPOS
+                mapViewController.FASTVL_CONT = fastvl_cont
+                mapViewController.FASTVL_BEGIN_DE = FASTVL_BEGIN_DE
             }
         }
-        
-        }
+    }
 
 
     // MARK: - Table view data source

@@ -176,7 +176,7 @@
             </objects>
             <point key="canvasLocation" x="3441" y="-604"/>
         </scene>
-        <!--Detail Festival Table View Controller-->
+        <!--문화/축제-->
         <scene sceneID="pSf-65-82k">
             <objects>
                 <tableViewController id="8fz-Ag-Usw" customClass="DetailFestivalTableViewController" customModule="Term_Project" customModuleProvider="target" sceneMemberID="viewController">
@@ -215,20 +215,19 @@
                             <outlet property="delegate" destination="8fz-Ag-Usw" id="PfJ-Vx-HtX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="h3x-z3-oVH">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="문화/축제" id="h3x-z3-oVH">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="S2f-Ms-EkA">
                             <connections>
                                 <segue destination="inO-sQ-kIA" kind="unwind" unwindAction="doneToPickerViewController3WithSegue:" id="aE5-qt-hIq"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="uHU-Bk-9RV">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BHc-zo-byN">
-                                <rect key="frame" x="209" y="7" width="150" height="30"/>
+                        <barButtonItem key="rightBarButtonItem" title="지도" id="B6j-p7-Bur">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="f3f-T5-2Bp">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="즐겨찾기"/>
+                                <state key="normal" title="지도"/>
                                 <connections>
-                                    <segue destination="SIl-cQ-qyG" kind="show" identifier="segueToMapView" id="fhn-a7-Irx"/>
+                                    <segue destination="SIl-cQ-qyG" kind="show" identifier="segueToMapView" id="Vtj-It-hUS"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -473,6 +472,9 @@
                                 <rect key="frame" x="209" y="7" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="즐겨찾기"/>
+                                <connections>
+                                    <segue destination="SIl-cQ-qyG" kind="show" identifier="segueToMapView" id="KlG-Wd-RjH"/>
+                                </connections>
                             </button>
                             <connections>
                                 <segue destination="py2-9s-xyk" kind="show" id="1cL-f1-4px"/>
@@ -579,6 +581,7 @@
         <!--Map View2 Controller-->
         <scene sceneID="qkt-4H-frF">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ya8-ke-Pi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="XWY-2Y-h9y" customClass="MapView2Controller" customModule="Term_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p49-Ak-t0c"/>
@@ -599,7 +602,6 @@
                         <outlet property="mapView" destination="ZfE-us-tyA" id="B8z-9g-eFX"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ya8-ke-Pi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4329" y="107"/>
         </scene>
@@ -642,7 +644,6 @@
         <!--Navigation Controller-->
         <scene sceneID="tox-Fi-MfG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bny-gu-zeu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Ze-LW-pY5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Ob-sF-4Hs">
@@ -654,6 +655,7 @@
                         <segue destination="Kde-jq-zyD" kind="relationship" relationship="rootViewController" id="7dA-De-18y"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bny-gu-zeu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8212" y="-1246.3268365817091"/>
         </scene>
@@ -839,8 +841,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3Dv-Ko-SGp"/>
         <segue reference="nph-hx-iFD"/>
         <segue reference="jX8-sN-Sn6"/>
+        <segue reference="KlG-Wd-RjH"/>
+        <segue reference="3Dv-Ko-SGp"/>
     </inferredMetricsTieBreakers>
 </document>

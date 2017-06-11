@@ -42,7 +42,6 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
     var festivalname_utf8 = ""
     
     var FASTVL_BEGIN_DE = NSMutableString()
-    var FASTVL_CONT = NSMutableString()
     var FASTVL_END_DE = NSMutableString()
     var OPENMEET_PLC = NSMutableString()
     
@@ -61,7 +60,6 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
     var XPos = NSMutableString()
     var YPos = NSMutableString()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         beginParsing()
@@ -75,17 +73,16 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
     func beginParsing() {
         posts = []
         if url == nil {
-            parser = XMLParser(contentsOf:(URL(string: "http://openapi.gg.go.kr/CultureFestival?Key=8c1c7bdeab4842f981dd047006ad6886&Type=xml&SIGUN_CD=41000" ))!)!
+            parser = XMLParser(contentsOf:(URL(string: "http://openapi.gg.go.kr/CultureFestival?Key=8c1c7bdeab4842f981dd047006ad6886&Type=xml&pSize=1000&SIGUN_CD=41000" ))!)!
         
         }
         else
         {
-            parser = XMLParser(contentsOf:(URL(string: url! ))!)!
+            parser = XMLParser(contentsOf:(URL(string: url!))!)!
         }
         parser.delegate = self
         parser.parse()
         tbData!.reloadData()
-        
     }
     
     
@@ -101,8 +98,6 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
             festival_cont = ""
             FASTVL_BEGIN_DE = NSMutableString()
             FASTVL_BEGIN_DE = ""
-            FASTVL_CONT = NSMutableString()
-            FASTVL_CONT = ""
             // 위도 경도
             XPos = NSMutableString()
             XPos = ""
@@ -112,7 +107,7 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
             FASTVL_END_DE = NSMutableString()
             FASTVL_END_DE = ""
             SIGUN_NM = NSMutableString()
-            SIGUN_NM = ""
+            SIGUN_NM = " "
             OPENMEET_PLC = NSMutableString()
             OPENMEET_PLC = ""
             
@@ -142,14 +137,11 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
     func parser(_ parser: XMLParser, foundCharacters string: String)
     {
         if element.isEqual(to: "FASTVL_BEGIN_DE") {
-          
-                FASTVL_BEGIN_DE.append(string)
-            
+            FASTVL_BEGIN_DE.append(string)
         }
         else if element.isEqual(to: "FASTVL_CONT") {
-           
             festival_cont.append(string)
-                   }
+        }
         else if element.isEqual(to: "REFINE_WGS84_LOGT") {
             XPos.append(string)
         }
@@ -284,11 +276,11 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
             }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
-        if segue.identifier == "segueToMapView" {
-            if let mapViewController = segue.destination as? MapViewController {
-                mapViewController.posts = posts
-            }
-        }
+        //if segue.identifier == "segueToMapView" {
+        //    if let mapViewController = segue.destination as? MapViewController {
+         //       mapViewController.posts = posts
+         //   }
+       // }
         
         // Lab7 선택한 row의 병원명을 utf8로 코딩
         if segue.identifier == "segueToFestivalDetail" {
@@ -311,11 +303,10 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
                 ypos = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "REFINE_WGS84_LAT") as! NSString as String
 
                 // url에서 한글을 쓸 수 있도록 코딩
-               
             if let navController = segue.destination as? UINavigationController {
                     if let detailFestivalTableViewController = navController.topViewController as? DetailFestivalTableViewController {
-                        detailFestivalTableViewController.FASTVL_CONT = festivalcont
-                        detailFestivalTableViewController.FASTVL_BEGIN_DE = festivalbegin
+                        detailFestivalTableViewController.fastvl_cont = (festivalcont as! NSMutableString) as String
+                        detailFestivalTableViewController.FASTVL_BEGIN_DE = (festivalbegin as! NSMutableString) as String
                         detailFestivalTableViewController.FASTVL_END_DE = festivalend
                         detailFestivalTableViewController.OPENMEET_PLC = openmeetplc
                         detailFestivalTableViewController.REFINE_ROADNM_ADDR = refien
@@ -326,17 +317,13 @@ class FestivalTableViewController: UITableViewController, XMLParserDelegate{
                         detailFestivalTableViewController.SUPRT_INST_NM = suprt
                         detailFestivalTableViewController.XPOS = xpos
                         detailFestivalTableViewController.YPOS = ypos
-
-
                     }
                 }
-                
-                
             }
         }
     }
     
-
+    
     // row의 개수는 posts 배열 원소의 개수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count

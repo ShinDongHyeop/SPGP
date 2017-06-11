@@ -41,6 +41,8 @@ class EventTableViewController: UITableViewController ,XMLParserDelegate{
     var mngt_inst_nm = ""
     var promoter_inst_nm = ""
     var suprt_inst_nm = ""
+    var xpos = ""
+    var ypos = ""
     
     var XPos = NSMutableString()
     var YPos = NSMutableString()
@@ -143,12 +145,11 @@ class EventTableViewController: UITableViewController ,XMLParserDelegate{
         element = elementName as NSString
         if (elementName as NSString).isEqual(to: "row")
         {
-            // 위도 경도
             XPos = NSMutableString()
             XPos = ""
             YPos = NSMutableString()
             YPos = ""
-            
+            // 위도 경도
             elements = NSMutableDictionary()
             elements = [:]
             event_begin = NSMutableString()
@@ -173,9 +174,9 @@ class EventTableViewController: UITableViewController ,XMLParserDelegate{
             emngt_inst_nm = ""
 
             epromoter_inst_nm = NSMutableString()
-            epromoter_inst_nm = ""
+            epromoter_inst_nm = " "
             esuprt_inst_nm = NSMutableString()
-            esuprt_inst_nm = ""
+            esuprt_inst_nm = " "
         }
     }
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
@@ -292,11 +293,6 @@ class EventTableViewController: UITableViewController ,XMLParserDelegate{
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
-        if segue.identifier == "segueToMapView" {
-            if let mapView2Controller = segue.destination as? MapView2Controller {
-                mapView2Controller.posts2 = posts
-            }
-        }
         
         // Lab7 선택한 row의 병원명을 utf8로 코딩
         if segue.identifier == "segueToEventDetail" {
@@ -313,7 +309,8 @@ class EventTableViewController: UITableViewController ,XMLParserDelegate{
                 mngt_inst_nm = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "MNGT_INST_NM") as! NSString as String
                 promoter_inst_nm = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "PROMOTER_INST_NM") as! NSString as String
                 suprt_inst_nm = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "SUPRT_INST_NM") as! NSString as String
-                
+                xpos = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "REFINE_WGS84_LOGT") as! NSString as String
+                ypos = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "REFINE_WGS84_LAT") as! NSString as String
                 // url에서 한글을 쓸 수 있도록 코딩
                 eventname_utf8 = eventname.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
 
@@ -330,6 +327,10 @@ class EventTableViewController: UITableViewController ,XMLParserDelegate{
                         detailEventTableViewController.MNGT_INST_NM = mngt_inst_nm
                         detailEventTableViewController.PROMOTER_INST_NM = promoter_inst_nm
                         detailEventTableViewController.SUPRT_INST_NM = suprt_inst_nm
+                        detailEventTableViewController.XPOS = xpos
+                        detailEventTableViewController.YPOS = ypos
+                        print("Eventtable XPOS : ", detailEventTableViewController.XPOS)
+                        print("Eventtable YPOS : ", detailEventTableViewController.YPOS)
                     }
                 }
             }
