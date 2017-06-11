@@ -69,8 +69,8 @@ class DetailFestivalTableViewController: UITableViewController, XMLParserDelegat
             if let mapViewController = segue.destination as? MapViewController {
                 mapViewController.XPos = XPOS
                 mapViewController.YPos = YPOS
-                mapViewController.FASTVL_CONT = fastvl_cont
-                mapViewController.FASTVL_BEGIN_DE = FASTVL_BEGIN_DE
+                mapViewController.CONT = fastvl_cont
+                mapViewController.BEGIN_DE = FASTVL_BEGIN_DE
             }
         }
     }

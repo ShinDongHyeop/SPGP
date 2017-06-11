@@ -14,8 +14,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     var XPos = String()
     var YPos = String()
-    var FASTVL_CONT = String()
-    var FASTVL_BEGIN_DE = String()
+    var CONT = String()
+    var BEGIN_DE = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     func loadInitialData() {
         let lat = (YPos as NSString).doubleValue
         let lon = (XPos as NSString).doubleValue
-        let festival = Festival(title: FASTVL_CONT, locationName: FASTVL_BEGIN_DE, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon))
+        let festival = Festival(title: CONT, locationName: BEGIN_DE, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon))
         festivals.append(festival)
     }
     

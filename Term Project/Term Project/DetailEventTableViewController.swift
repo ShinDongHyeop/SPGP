@@ -69,11 +69,11 @@ class DetailEventTableViewController: UITableViewController , XMLParserDelegate{
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
  
         if segue.identifier == "segueToMapView" {
-            if let mapView2Controller = segue.destination as? MapView2Controller {
-                mapView2Controller.XPos = XPOS
-                mapView2Controller.YPos = YPOS
-                mapView2Controller.EVENT_TITLE = EVENT_TITLE
-                mapView2Controller.EVENT_BEGIN_DE = EVENT_BEGIN_DE
+            if let mapViewController = segue.destination as? MapViewController {
+                mapViewController.XPos = XPOS
+                mapViewController.YPos = YPOS
+                mapViewController.CONT = EVENT_TITLE
+                mapViewController.BEGIN_DE = EVENT_BEGIN_DE
             }
         }
     }
