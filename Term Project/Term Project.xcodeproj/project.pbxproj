@@ -1,0 +1,406 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A118C80E1EDAD4280073FDB9 /* Festival.swift in Sources */ = {isa = PBXBuildFile; fileRef = A118C80D1EDAD4280073FDB9 /* Festival.swift */; };
+		A118C8101EDAD7780073FDB9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A118C80F1EDAD7780073FDB9 /* Event.swift */; };
+		A118C8121EDAE4690073FDB9 /* Map2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A118C8111EDAE4690073FDB9 /* Map2ViewController.swift */; };
+		A1306EE41ED574E500E4A985 /* EventMarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1306EE31ED574E500E4A985 /* EventMarkTableViewController.swift */; };
+		A1306EE61ED574F900E4A985 /* FestivalMarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1306EE51ED574F900E4A985 /* FestivalMarkTableViewController.swift */; };
+		A15EE03B1ED17A11009692D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EE03A1ED17A11009692D2 /* AppDelegate.swift */; };
+		A15EE0401ED17A11009692D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15EE03E1ED17A11009692D2 /* Main.storyboard */; };
+		A15EE0421ED17A11009692D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A15EE0411ED17A11009692D2 /* Assets.xcassets */; };
+		A15EE0451ED17A11009692D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15EE0431ED17A11009692D2 /* LaunchScreen.storyboard */; };
+		A15EE04D1ED17A71009692D2 /* FestivalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EE04C1ED17A71009692D2 /* FestivalTableViewController.swift */; };
+		A15EE0511ED1828E009692D2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EE0501ED1828E009692D2 /* MapViewController.swift */; };
+		A15EE0551ED18E20009692D2 /* DetailFestivalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EE0541ED18E20009692D2 /* DetailFestivalTableViewController.swift */; };
+		A15EE0571ED19A80009692D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EE0561ED19A80009692D2 /* ViewController.swift */; };
+		A1631AD81ED28B53007CE314 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1631AD71ED28B53007CE314 /* EventTableViewController.swift */; };
+		A1631ADA1ED28B73007CE314 /* DetailEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1631AD91ED28B73007CE314 /* DetailEventTableViewController.swift */; };
+		A17A1E6F1EED45D6007A04EE /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17A1E6E1EED45D6007A04EE /* EventViewController.swift */; };
+		A1F2A3521EF118BD005320B4 /* KakaoTalk_Photo_2017-06-14-16-09-42_76.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F2A3511EF118BD005320B4 /* KakaoTalk_Photo_2017-06-14-16-09-42_76.png */; };
+		A1F2A3541EF11911005320B4 /* KakaoTalk_Photo_2017-06-14-16-10-47_42.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F2A3531EF11911005320B4 /* KakaoTalk_Photo_2017-06-14-16-10-47_42.png */; };
+		A1F2A3561EF11919005320B4 /* KakaoTalk_Photo_2017-06-14-16-10-51_20.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F2A3551EF11919005320B4 /* KakaoTalk_Photo_2017-06-14-16-10-51_20.png */; };
+		A1F2A35F1EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-01_9.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F2A3571EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-01_9.png */; };
+		A1F2A3601EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-03_8.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F2A3581EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-03_8.png */; };
+		A1F2A3611EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-03_88.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F2A3591EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-03_88.png */; };
+		A1F2A3621EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-06_34.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F2A35A1EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-06_34.png */; };
+		A1F2A3631EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-06_91.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F2A35B1EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-06_91.png */; };
+		A1F2A3641EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-09_29.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F2A35C1EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-09_29.png */; };
+		A1F2A3651EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-09_83.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F2A35D1EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-09_83.png */; };
+		A1F2A3661EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-12_3.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F2A35E1EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-12_3.png */; };
+		A1F5ACD41EECF8C80007F239 /* FestivalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F5ACD31EECF8C80007F239 /* FestivalViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A118C80D1EDAD4280073FDB9 /* Festival.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Festival.swift; sourceTree = "<group>"; };
+		A118C80F1EDAD7780073FDB9 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		A118C8111EDAE4690073FDB9 /* Map2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map2ViewController.swift; sourceTree = "<group>"; };
+		A1306EE31ED574E500E4A985 /* EventMarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMarkTableViewController.swift; sourceTree = "<group>"; };
+		A1306EE51ED574F900E4A985 /* FestivalMarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestivalMarkTableViewController.swift; sourceTree = "<group>"; };
+		A15EE0371ED17A11009692D2 /* Term Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Term Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A15EE03A1ED17A11009692D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A15EE03F1ED17A11009692D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A15EE0411ED17A11009692D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A15EE0441ED17A11009692D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A15EE0461ED17A11009692D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A15EE04C1ED17A71009692D2 /* FestivalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestivalTableViewController.swift; sourceTree = "<group>"; };
+		A15EE0501ED1828E009692D2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A15EE0541ED18E20009692D2 /* DetailFestivalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailFestivalTableViewController.swift; sourceTree = "<group>"; };
+		A15EE0561ED19A80009692D2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A1631AD71ED28B53007CE314 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
+		A1631AD91ED28B73007CE314 /* DetailEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailEventTableViewController.swift; sourceTree = "<group>"; };
+		A17A1E6E1EED45D6007A04EE /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		A1F2A3511EF118BD005320B4 /* KakaoTalk_Photo_2017-06-14-16-09-42_76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KakaoTalk_Photo_2017-06-14-16-09-42_76.png"; sourceTree = "<group>"; };
+		A1F2A3531EF11911005320B4 /* KakaoTalk_Photo_2017-06-14-16-10-47_42.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KakaoTalk_Photo_2017-06-14-16-10-47_42.png"; sourceTree = "<group>"; };
+		A1F2A3551EF11919005320B4 /* KakaoTalk_Photo_2017-06-14-16-10-51_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KakaoTalk_Photo_2017-06-14-16-10-51_20.png"; sourceTree = "<group>"; };
+		A1F2A3571EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-01_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KakaoTalk_Photo_2017-06-14-16-13-01_9.png"; sourceTree = "<group>"; };
+		A1F2A3581EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-03_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KakaoTalk_Photo_2017-06-14-16-13-03_8.png"; sourceTree = "<group>"; };
+		A1F2A3591EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-03_88.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KakaoTalk_Photo_2017-06-14-16-13-03_88.png"; sourceTree = "<group>"; };
+		A1F2A35A1EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-06_34.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KakaoTalk_Photo_2017-06-14-16-13-06_34.png"; sourceTree = "<group>"; };
+		A1F2A35B1EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-06_91.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KakaoTalk_Photo_2017-06-14-16-13-06_91.png"; sourceTree = "<group>"; };
+		A1F2A35C1EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-09_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KakaoTalk_Photo_2017-06-14-16-13-09_29.png"; sourceTree = "<group>"; };
+		A1F2A35D1EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-09_83.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KakaoTalk_Photo_2017-06-14-16-13-09_83.png"; sourceTree = "<group>"; };
+		A1F2A35E1EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-12_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KakaoTalk_Photo_2017-06-14-16-13-12_3.png"; sourceTree = "<group>"; };
+		A1F5ACD31EECF8C80007F239 /* FestivalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestivalViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A15EE0341ED17A11009692D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A15EE02E1ED17A11009692D2 = {
+			isa = PBXGroup;
+			children = (
+				A15EE0391ED17A11009692D2 /* Term Project */,
+				A15EE0381ED17A11009692D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A15EE0381ED17A11009692D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A15EE0371ED17A11009692D2 /* Term Project.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A15EE0391ED17A11009692D2 /* Term Project */ = {
+			isa = PBXGroup;
+			children = (
+				A15EE0561ED19A80009692D2 /* ViewController.swift */,
+				A15EE03A1ED17A11009692D2 /* AppDelegate.swift */,
+				A15EE03E1ED17A11009692D2 /* Main.storyboard */,
+				A15EE0411ED17A11009692D2 /* Assets.xcassets */,
+				A15EE0431ED17A11009692D2 /* LaunchScreen.storyboard */,
+				A15EE0461ED17A11009692D2 /* Info.plist */,
+				A15EE04C1ED17A71009692D2 /* FestivalTableViewController.swift */,
+				A15EE0541ED18E20009692D2 /* DetailFestivalTableViewController.swift */,
+				A15EE0501ED1828E009692D2 /* MapViewController.swift */,
+				A118C8111EDAE4690073FDB9 /* Map2ViewController.swift */,
+				A118C80D1EDAD4280073FDB9 /* Festival.swift */,
+				A1306EE51ED574F900E4A985 /* FestivalMarkTableViewController.swift */,
+				A1631AD71ED28B53007CE314 /* EventTableViewController.swift */,
+				A1631AD91ED28B73007CE314 /* DetailEventTableViewController.swift */,
+				A118C80F1EDAD7780073FDB9 /* Event.swift */,
+				A1306EE31ED574E500E4A985 /* EventMarkTableViewController.swift */,
+				A1F5ACD31EECF8C80007F239 /* FestivalViewController.swift */,
+				A17A1E6E1EED45D6007A04EE /* EventViewController.swift */,
+				A1F2A3511EF118BD005320B4 /* KakaoTalk_Photo_2017-06-14-16-09-42_76.png */,
+				A1F2A3531EF11911005320B4 /* KakaoTalk_Photo_2017-06-14-16-10-47_42.png */,
+				A1F2A3551EF11919005320B4 /* KakaoTalk_Photo_2017-06-14-16-10-51_20.png */,
+				A1F2A3571EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-01_9.png */,
+				A1F2A3581EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-03_8.png */,
+				A1F2A3591EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-03_88.png */,
+				A1F2A35A1EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-06_34.png */,
+				A1F2A35B1EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-06_91.png */,
+				A1F2A35C1EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-09_29.png */,
+				A1F2A35D1EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-09_83.png */,
+				A1F2A35E1EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-12_3.png */,
+			);
+			path = "Term Project";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A15EE0361ED17A11009692D2 /* Term Project */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A15EE0491ED17A11009692D2 /* Build configuration list for PBXNativeTarget "Term Project" */;
+			buildPhases = (
+				A15EE0331ED17A11009692D2 /* Sources */,
+				A15EE0341ED17A11009692D2 /* Frameworks */,
+				A15EE0351ED17A11009692D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Term Project";
+			productName = "Term Project";
+			productReference = A15EE0371ED17A11009692D2 /* Term Project.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A15EE02F1ED17A11009692D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "DONGHYEOP SHIN";
+				TargetAttributes = {
+					A15EE0361ED17A11009692D2 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5K89RS36D9;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A15EE0321ED17A11009692D2 /* Build configuration list for PBXProject "Term Project" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A15EE02E1ED17A11009692D2;
+			productRefGroup = A15EE0381ED17A11009692D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A15EE0361ED17A11009692D2 /* Term Project */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A15EE0351ED17A11009692D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1F2A3611EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-03_88.png in Resources */,
+				A1F2A3621EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-06_34.png in Resources */,
+				A1F2A3541EF11911005320B4 /* KakaoTalk_Photo_2017-06-14-16-10-47_42.png in Resources */,
+				A1F2A3661EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-12_3.png in Resources */,
+				A1F2A3631EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-06_91.png in Resources */,
+				A1F2A3651EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-09_83.png in Resources */,
+				A1F2A3521EF118BD005320B4 /* KakaoTalk_Photo_2017-06-14-16-09-42_76.png in Resources */,
+				A1F2A3601EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-03_8.png in Resources */,
+				A15EE0451ED17A11009692D2 /* LaunchScreen.storyboard in Resources */,
+				A15EE0421ED17A11009692D2 /* Assets.xcassets in Resources */,
+				A1F2A3641EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-09_29.png in Resources */,
+				A1F2A35F1EF11993005320B4 /* KakaoTalk_Photo_2017-06-14-16-13-01_9.png in Resources */,
+				A15EE0401ED17A11009692D2 /* Main.storyboard in Resources */,
+				A1F2A3561EF11919005320B4 /* KakaoTalk_Photo_2017-06-14-16-10-51_20.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A15EE0331ED17A11009692D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1631ADA1ED28B73007CE314 /* DetailEventTableViewController.swift in Sources */,
+				A118C8101EDAD7780073FDB9 /* Event.swift in Sources */,
+				A15EE0571ED19A80009692D2 /* ViewController.swift in Sources */,
+				A1306EE61ED574F900E4A985 /* FestivalMarkTableViewController.swift in Sources */,
+				A118C80E1EDAD4280073FDB9 /* Festival.swift in Sources */,
+				A15EE03B1ED17A11009692D2 /* AppDelegate.swift in Sources */,
+				A118C8121EDAE4690073FDB9 /* Map2ViewController.swift in Sources */,
+				A15EE0511ED1828E009692D2 /* MapViewController.swift in Sources */,
+				A15EE0551ED18E20009692D2 /* DetailFestivalTableViewController.swift in Sources */,
+				A17A1E6F1EED45D6007A04EE /* EventViewController.swift in Sources */,
+				A1306EE41ED574E500E4A985 /* EventMarkTableViewController.swift in Sources */,
+				A1631AD81ED28B53007CE314 /* EventTableViewController.swift in Sources */,
+				A1F5ACD41EECF8C80007F239 /* FestivalViewController.swift in Sources */,
+				A15EE04D1ED17A71009692D2 /* FestivalTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A15EE03E1ED17A11009692D2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A15EE03F1ED17A11009692D2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A15EE0431ED17A11009692D2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A15EE0441ED17A11009692D2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A15EE0471ED17A11009692D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A15EE0481ED17A11009692D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A15EE04A1ED17A11009692D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5K89RS36D9;
+				INFOPLIST_FILE = "Term Project/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kpu.2017class.Term-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A15EE04B1ED17A11009692D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5K89RS36D9;
+				INFOPLIST_FILE = "Term Project/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kpu.2017class.Term-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A15EE0321ED17A11009692D2 /* Build configuration list for PBXProject "Term Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A15EE0471ED17A11009692D2 /* Debug */,
+				A15EE0481ED17A11009692D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A15EE0491ED17A11009692D2 /* Build configuration list for PBXNativeTarget "Term Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A15EE04A1ED17A11009692D2 /* Debug */,
+				A15EE04B1ED17A11009692D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A15EE02F1ED17A11009692D2 /* Project object */;
+}
