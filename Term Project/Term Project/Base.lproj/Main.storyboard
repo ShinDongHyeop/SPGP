@@ -703,7 +703,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="OpenAPI 서울시 병원지도표시" id="73A-n2-bha">
+                    <navigationItem key="navigationItem" id="73A-n2-bha">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="fbM-rB-2fq">
                             <connections>
                                 <segue destination="IBl-VW-j8r" kind="show" identifier="segueToFestivalTableView" id="nph-hx-iFD"/>

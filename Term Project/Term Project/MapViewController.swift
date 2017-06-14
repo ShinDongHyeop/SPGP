@@ -44,7 +44,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         festivals.append(festival)
     }
     
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, celloutAccessoryControlTapped control: UIControl)
+    @objc(mapView:annotationView:calloutAccessoryControlTapped:) func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl)
     {
         let location = view.annotation as! Festival
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
